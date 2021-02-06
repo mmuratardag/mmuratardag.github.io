@@ -1,6 +1,8 @@
 ---
 pagetitle: M. Murat Ardag, Ph.D.
 ---
+
+<br />
 <br />
 
 <img src="ws_img/mma_c_gp.jpg" style="width:15%; margin-right: 20px" align="left">
