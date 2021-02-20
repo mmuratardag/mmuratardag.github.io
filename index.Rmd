@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = F)
 
 I am an aspiring data scientist.
 
-There is nothing to see on this page yet; meanwhile, feel free to visit my [academic website](https://mmuratardag.github.io/academic_website) or simply go to
+There is not much to see on this page yet; meanwhile, feel free to visit my [academic website](https://mmuratardag.github.io/academic_website) or simply go to
 [
 ```{r}
 icon::fontawesome$brands$github
