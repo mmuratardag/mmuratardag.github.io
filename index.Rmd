@@ -2,6 +2,10 @@
 pagetitle: M. Murat Ardag, Ph.D.
 ---
 
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = F)
+```
+
 <br />
 <br />
 
@@ -17,4 +21,16 @@ pagetitle: M. Murat Ardag, Ph.D.
 <br />
 <br />
 
-I am an aspiring data scientist. There is nothing to see on this page yet; meanwhile, feel free to visit my [academic website](https://mmuratardag.github.io/academic_website), though.
+I am an aspiring data scientist.
+
+There is nothing to see on this page yet; meanwhile, feel free to visit my [academic website](https://mmuratardag.github.io/academic_website) or simply go to
+[
+```{r}
+icon::fontawesome$brands$github
+```
+](https://github.com/mmuratardag){target="_blank"}
+[
+```{r}
+icon::fontawesome$brands$linkedin
+```
+](https://www.linkedin.com/in/mmuratardag){target="_blank"}
