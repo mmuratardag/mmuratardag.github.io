@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = F)
 
 <br>
 <div>
-I am an aspiring data scientist and a political psychologist -- that just means I am an academic in training to become a data scientist.
+I am a political psychologist in training to become a data scientist. In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
 </div>
 
 <div>
