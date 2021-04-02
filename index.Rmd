@@ -13,27 +13,25 @@ knitr::opts_chunk$set(echo = F)
 
 <br>
 <div>
-I am a political psychologist in training to become a data scientist. In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
+I am a data scientist and a political psychologist.
 </div>
 
 <div>
-There is not much to see on this page yet; I will add one or two more pages to this website around mid-April.
+I specialize in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity. My work almost always involves one of the following. (1) machine learning & deep learning; (2) natural language processing; (3 ) the general structural equation modeling framework; (4) psychometric networks; (5) social network analysis. To generate new insights, I utilize my domain knowledge in diverse fields such as data science, political science, and psychology.
 </div>
 
 <div>
-Meanwhile, feel free to visit my [academic website](https://mmuratardag.github.io/academic_website) to find out more about me as the political psychologist.
-</div>
-
-<div>
-For getting to know me as the aspiring data scientist, you can take a look at what I do on
-[
+To get to know me as the data scientist, you can look at what I do on [
 ```{r}
 icon::fontawesome$brands$github
 ```
-](https://github.com/mmuratardag){target="_blank"} or simply see my
-[
+](https://github.com/mmuratardag){target="_blank"} or see my [
 ```{r}
 icon::fontawesome$brands$linkedin
 ```
 ](https://www.linkedin.com/in/mmuratardag){target="_blank"} profile.
+</div>
+
+<div>
+To find out more about me as the political psychologist, visit my [academic website](https://mmuratardag.github.io/academic_website). In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
 </div>
