@@ -6,6 +6,9 @@ navbar:
     - text: "Home"
       icon: fa-home
       href: index.html
+    - text: "CV"
+      icon: fa-file-pdf-o
+      href: static/MMA_DS_v0.1.pdf
   right:
     - text: "Contact"
       icon: fa-at fa-lg
