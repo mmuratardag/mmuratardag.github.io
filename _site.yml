@@ -10,6 +10,9 @@ navbar:
       icon: fa-file-pdf-o
       href: static/MMA_DS_v0.2.pdf
   right:
+    - text: "Academic Website"
+      icon: fa-blog
+      href: https://mmuratardag.github.io/academic_website
     - text: "Blog"
       icon: fa-blog
       href: https://mmuratardag.github.io/blog_posts

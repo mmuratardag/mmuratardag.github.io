@@ -35,3 +35,12 @@ icon::fontawesome$brands$linkedin
 <div>
 To find out more about me as the political psychologist, visit my [academic website](https://mmuratardag.github.io/academic_website). In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
 </div>
+
+<div>
+__What's new?__
+<br/> ***08/03/2021***: Blog post -- [Visualizing vDEM democracy scores using plotly…](https://mmuratardag.github.io/blog_posts/blog_2021_03_08.html)
+<br/> ***26/04/2020***: Blog post -- [An informal benchmarking within psychometrics: attitude network approach vs. the general SEM framework using German national identity as an example](https://mmuratardag.github.io/blog_posts/blog_2020_04_26.html)
+<br/> ***02/12/2019***: Blog post on the ultra-short version of Collective Narcissism Scale for the [Prejudice Lab at Goldsmiths, University of London](https://collectivenarcissism.com/){target="_blank"}. Pdf version [here](https://collectivenarcissism.com/blog/3item_cns){target="_blank"}; HTML version [here](PODETR_IRT_data.RData.html)
+<br/> ***09/06/2019***: Blog post -- [Juxtaposing psychometrics, topic modeling, and social network analysis to model competing nationalist discourses](https://mmuratardag.github.io/blog_posts/blog_2019_06_09.html)
+<br/> ***16/04/2019***: Blog post -- [semtree vs. networktree](https://mmuratardag.github.io/blog_posts/blog_2019_04_16.html)
+</div>
