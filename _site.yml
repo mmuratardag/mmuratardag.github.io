@@ -10,6 +10,9 @@ navbar:
       icon: fa-file-pdf-o
       href: static/MMA_DS_v0.2.pdf
   right:
+    - text: "Blog"
+      icon: fa-blog
+      href: https://mmuratardag.github.io/blog_posts
     - text: "Contact"
       icon: fa-at fa-lg
       href: contact.html
