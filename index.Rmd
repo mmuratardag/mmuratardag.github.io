@@ -11,13 +11,28 @@ knitr::opts_chunk$set(echo = F)
 
 <img src="ws_img/mma_c_gp.jpg" style="width:15%; margin-right: 20px" align="left">
 
-<br>
 <div>
-I am a data scientist and a political psychologist.
+I am a data scientist and a political psychologist. I specialize in in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
 </div>
 
 <div>
-I specialize in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity. My work almost always involves one of the following. (1) machine learning & deep learning; (2) natural language processing; (3) the general structural equation modeling framework; (4) psychometric networks; (5) social network analysis. To generate new insights, I utilize my domain knowledge in data science, political science, and psychology.
+I have been coding in the R environment for > 7 years. I improved my coding skills in the Python environment after attending the [Spiced Academy's Data Science Bootcamp](https://www.spiced-academy.com/en/program/data-science){target="_blank"} in 2021.
+</div>
+
+<div>
+In my previous academic job as a postdoc, I worked as the lead data analyst in a third-party funded project ([Business Finland](https://www.businessfinland.fi/en/){target="_blank"} & [Hofstede Insights](https://www.hofstede-insights.com/){target="_blank"}), developing a dictionary that measures organizational culture with [Hofstede's Multi-Focus Model](https://hi.hofstede-insights.com/multi-focus-model){target="_blank"}.
+</div>
+
+<div>
+As a political psychologist[^1], my passion is revealing and understanding heterogeneity. That translates into various unsupervised machine learning and natural language processing applications like latent profile analysis, latent class analysis, psychological profiles with psychometric networks[^2], [semantic networks](https://cran.r-project.org/web/packages/SemNeT/index.html){target="_blank"}, [concept class analysis](https://github.com/dustinstoltz/CMDist){target="_blank"}.
+</div>
+
+<div>
+My work always involves one of the following. (1) machine learning & deep learning; (2) natural language processing; (3) the general structural equation modeling framework; (4) psychometric networks; (5) social network analysis. To generate new insights, I utilize my domain knowledge in data science, political science, and psychology.
+</div>
+
+<div>
+Before academic life, I was a sales manager at a multi-national outdoor advertising company in Istanbul. During my undergrad studies, I worked as a music journalist.
 </div>
 
 <div>
@@ -33,14 +48,8 @@ icon::fontawesome$brands$linkedin
 </div>
 
 <div>
-To find out more about me as the political psychologist, visit my [academic website](https://mmuratardag.github.io/academic_website). In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
+To find out more about me as the political psychologist, visit my [academic website](https://mmuratardag.github.io/academic_website).
 </div>
 
-<div>
-__What's new?__
-<br/> ***08/03/2021***: Blog post -- [Visualizing vDEM democracy scores using plotly…](https://mmuratardag.github.io/blog_posts/blog_2021_03_08.html)
-<br/> ***26/04/2020***: Blog post -- [An informal benchmarking within psychometrics: attitude network approach vs. the general SEM framework using German national identity as an example](https://mmuratardag.github.io/blog_posts/blog_2020_04_26.html)
-<br/> ***02/12/2019***: Blog post on the ultra-short version of Collective Narcissism Scale for the [Prejudice Lab at Goldsmiths, University of London](https://collectivenarcissism.com/){target="_blank"}. Pdf version [here](https://collectivenarcissism.com/blog/3item_cns){target="_blank"}; HTML version [here](PODETR_IRT_data.RData.html)
-<br/> ***09/06/2019***: Blog post -- [Juxtaposing psychometrics, topic modeling, and social network analysis to model competing nationalist discourses](https://mmuratardag.github.io/blog_posts/blog_2019_06_09.html)
-<br/> ***16/04/2019***: Blog post -- [semtree vs. networktree](https://mmuratardag.github.io/blog_posts/blog_2019_04_16.html)
-</div>
+[^1]: In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
+[^2]: The psychometric networks are relatively new; for those who have no familiarity, the following can give you a pretty good first impression. Check out [this](http://psychosystems.org/files/Literature/NetworkPsychometricsDraft.pdf){target="_blank"}, [this](https://www.rug.nl/gmw/psychology/expertise-groups/psychometrics-and-statistics/projects/main/main_1_psy_networks-in-psychology_-more-than-a-pretty-picture_?lang=en){target="_blank"}, [this](http://sachaepskamp.com/Dissertation){target="_blank"}, [this](https://psych-networks.com/r-packages){target="_blank"} & [this](http://psychonetrics.org){target="_blank"}.
