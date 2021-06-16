@@ -38,11 +38,11 @@ Before academic life, I was a sales manager at a multi-national outdoor advertis
 <div>
 To get to know me as the data scientist, you can look at what I do on [
 ```{r}
-icon::fontawesome$brands$github
+icons::fontawesome$brands$github
 ```
 ](https://github.com/mmuratardag){target="_blank"} or see my [
 ```{r}
-icon::fontawesome$brands$linkedin
+icons::fontawesome$brands$linkedin
 ```
 ](https://www.linkedin.com/in/mmuratardag){target="_blank"} profile.
 </div>

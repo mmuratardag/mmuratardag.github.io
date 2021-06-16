@@ -7,8 +7,8 @@ navbar:
       icon: fa-home
       href: index.html
     - text: "CV"
-      icon: fa-file-pdf-o
-      href: static/MMA_DS_v0.3.2.pdf
+      icon: fa-solid fa-file-pdf
+      href: static/MMA_DS_v0.3.3.pdf
   right:
     - text: "Academic Website"
       icon: fa-blog
