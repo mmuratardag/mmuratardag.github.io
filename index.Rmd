@@ -16,7 +16,7 @@ I am a data scientist and a political psychologist. I specialize in in psychomet
 </div>
 
 <div>
-I have been coding in the R environment for > 7 years. I improved my coding skills in the Python environment after attending the [Spiced Academy's Data Science Bootcamp](https://www.spiced-academy.com/en/program/data-science){target="_blank"} in 2021.
+I have over seven years of experience with the R scientific computing and statistics language; I have been coding with Python for more than two years. I improved my coding skills within the Python environment after attending the [Spiced Academy's Data Science Bootcamp](https://www.spiced-academy.com/en/program/data-science){target="_blank"} in 2021.
 </div>
 
 <div>
