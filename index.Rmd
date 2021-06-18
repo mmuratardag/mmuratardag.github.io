@@ -20,7 +20,7 @@ I have over seven years of experience with the R scientific computing and statis
 </div>
 
 <div>
-In my previous academic job as a postdoc, I worked as the lead data analyst in a third-party funded project ([Business Finland](https://www.businessfinland.fi/en/){target="_blank"} & [Hofstede Insights](https://www.hofstede-insights.com/){target="_blank"}), developing a dictionary that measures organizational culture with [Hofstede's Multi-Focus Model](https://hi.hofstede-insights.com/multi-focus-model){target="_blank"}.
+In my previous academic job as a postdoc, I worked as the lead data analyst in a third-party funded project ([Business Finland](https://www.businessfinland.fi/en/){target="_blank"} & [Hofstede Insights](https://www.hofstede-insights.com/){target="_blank"}), and developed a dictionary that measures organizational culture with [Hofstede's Multi-Focus Model](https://hi.hofstede-insights.com/multi-focus-model){target="_blank"}.
 </div>
 
 <div>
