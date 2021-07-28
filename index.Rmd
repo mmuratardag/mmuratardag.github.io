@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = F)
 <img src="ws_img/mma_c_gp.jpg" style="width:15%; margin-right: 20px" align="left">
 
 <div>
-I am a data scientist and a political psychologist. I specialize in in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
+I am a data scientist and a political psychologist. I specialize in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
 </div>
 
 <div>
@@ -49,6 +49,10 @@ icons::fontawesome$brands$linkedin
 
 <div>
 To find out more about me as the political psychologist, visit my [academic website](https://mmuratardag.github.io/academic_website).
+</div>
+
+<div>
+I occasionally make blogposts; read them [here](https://mmuratardag.github.io/blog_posts).
 </div>
 
 [^1]: In case, you are wondering what political psychology is [this](https://pprg.stanford.edu/what-is-political-psychology){target="_blank"}, [this](https://en.wikipedia.org/wiki/Political_psychology){target="_blank"} & [this](https://ispp.org){target="_blank"} can help form an accurate impression.
