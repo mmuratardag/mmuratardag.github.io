@@ -12,19 +12,7 @@ knitr::opts_chunk$set(echo = F)
 <img src="ws_img/mma_c_gp.jpg" style="width:15%; margin-right: 20px" align="left">
 
 <div>
-I am a data scientist and a political psychologist specializing in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity with 7+ years of 
-```{r}
-icons::fontawesome$brands$`r-project`
-```
-and 2+ years of 
-```{r}
-icons::fontawesome$brands$python
-```
-experience.
-</div>
-
-<div>
-As a political psychologist[^1], my passion is revealing and understanding heterogeneity. That translates into various unsupervised machine learning and natural language processing applications.
+I am a data scientist and a political psychologist[^1] (Ph.D.) with a background in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
 </div>
 
 <div>
