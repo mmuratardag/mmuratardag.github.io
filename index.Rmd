@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = F)
 <img src="ws_img/mma_c_gp.jpg" style="width:15%; margin-right: 20px" align="left">
 
 <div>
-I am a data scientist and a political psychologist[^1] (Ph.D.) with a background in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
+I am a data scientist and a political psychologist[^1] with a background in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
 </div>
 
 <div>
