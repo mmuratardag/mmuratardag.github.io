@@ -16,6 +16,10 @@ I am a data scientist and a political psychologist[^1] with a background in psyc
 </div>
 
 <div>
+I work as a data scientist at [BCW Global, Europe & Africa](https://www.bcw-global.com/){target="_blank"}. I am also an affiliated Postdoc Fellow at [Bremen Graduate School of Social Sciences](https://www.bigsss-bremen.de/){target="_blank"}.
+</div>
+
+<div>
 To get to know me as the data scientist, you can look at what I do on [
 ```{r}
 icons::fontawesome$brands$github
