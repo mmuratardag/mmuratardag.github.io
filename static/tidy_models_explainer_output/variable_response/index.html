@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="../mi2template.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script>
+    function makeHelpPanel(help_link, docs_link) {
+      return '\
+            <div class="help-panel">\
+              <div class="title"><i class="fa fa-question" aria-hidden="true"></i> Helpful resources</div>\
+              <a href="' + docs_link + '" target="_blank">Technical documentation</a>\
+              <a href="' + help_link + '" target="_blank">Business description</a>\
+            </div>\
+            ';
+    };
+
+    function renderHelpPanels() {
+      var panel = document.getElementsByTagName("help-panel")[0];
+
+      while(panel) {
+        var docs_url = panel.attributes["docs-url"].value; 
+        var help_url = panel.attributes["help-url"].value;
+        
+        var html = makeHelpPanel(help_url, docs_url);
+        panel.outerHTML = html;
+
+        panel = document.getElementsByTagName("help-panel")[0]; 
+        // Not iterating the result because it changes after each iteration
+      }
+    }
+
+    $(document).ready(function(){
+      renderHelpPanels();
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="container template-home">
+
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top navbar-mi2" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </a>
+            <a class="navbar-brand navbar-mi2" href="../index.html">modelDown</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-mi2 nav navbar-nav">
+              <li>
+                <a href="../index.html">
+                  <span class="fa fa-home fa-lg"></span>
+
+                </a>
+              </li>
+
+              <li>
+                  <a href="../model_performance/index.html">Model Performance</a>
+              </li>
+              <li>
+                  <a href="../variable_importance/index.html">Variable Importance</a>
+              </li>
+              <li>
+                  <a href="../variable_response/index.html">Variable Response</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+      </div>
+      <!--/.navbar -->
+    </header>
+
+    <div class="row" style="position: relative; margin-bottom:60px;">
+      <div class="variable-selector-panel">
+    <b>Features</b>
+    <div class="panel panel-default">
+        <ul class="list-group">
+            <li class="list-group-item variable-link">
+                <a href="#balance">balance</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#installment">installment</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#paid_total">paid_total</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#paid_interest">paid_interest</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#interest_rate">interest_rate</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#paid_principal">paid_principal</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#total_debit_limit">total_debit_limit</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#annual_income">annual_income</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#annual_income_joint">annual_income_joint</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#emp_length">emp_length</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#term">term</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#months_since_last_delinq">months_since_last_delinq</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#homeownership">homeownership</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#debt_to_income">debt_to_income</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#debt_to_income_joint">debt_to_income_joint</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#verified_income">verified_income</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#verification_income_joint">verification_income_joint</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#months_since_90d_late">months_since_90d_late</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_active_debit_accounts">num_active_debit_accounts</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#state">state</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#delinq_2y">delinq_2y</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_collections_last_12m">num_collections_last_12m</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_historical_failed_to_pay">num_historical_failed_to_pay</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#current_accounts_delinq">current_accounts_delinq</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#total_collection_amount_ever">total_collection_amount_ever</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#current_installment_accounts">current_installment_accounts</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_accounts_120d_past_due">num_accounts_120d_past_due</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_accounts_30d_past_due">num_accounts_30d_past_due</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#tax_liens">tax_liens</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#public_record_bankrupt">public_record_bankrupt</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#loan_purpose">loan_purpose</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#application_type">application_type</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#loan_amount">loan_amount</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#grade">grade</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#sub_grade">sub_grade</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#loan_status">loan_status</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#initial_listing_status">initial_listing_status</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#disbursement_method">disbursement_method</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#paid_late_fees">paid_late_fees</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#accounts_opened_24m">accounts_opened_24m</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_open_cc_accounts">num_open_cc_accounts</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_satisfactory_accounts">num_satisfactory_accounts</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_total_cc_accounts">num_total_cc_accounts</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#earliest_credit_line">earliest_credit_line</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#account_never_delinq_percent">account_never_delinq_percent</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#months_since_last_credit_inquiry">months_since_last_credit_inquiry</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_mort_accounts">num_mort_accounts</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#inquiries_last_12m">inquiries_last_12m</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#open_credit_lines">open_credit_lines</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#num_cc_carrying_balance">num_cc_carrying_balance</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#total_credit_utilized">total_credit_utilized</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#total_credit_lines">total_credit_lines</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#issue_month">issue_month</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#total_credit_limit">total_credit_limit</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="col-md-push-3 col-md-9 main-content contents">
+    <div class="plot-container">
+        <h2 id="balance" class="hasAnchor">
+            <a href="#balance" class="anchor"></a>
+            Feature: balance
+        </h2>
+        <img class="plot" src="img/variable_response_balance_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;dac3534959c1382cc6cd66460f83de3e&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="installment" class="hasAnchor">
+            <a href="#installment" class="anchor"></a>
+            Feature: installment
+        </h2>
+        <img class="plot" src="img/variable_response_installment_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;b99bfd2e6a9f4d4319ffd91dd89939cb&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="paid_total" class="hasAnchor">
+            <a href="#paid_total" class="anchor"></a>
+            Feature: paid_total
+        </h2>
+        <img class="plot" src="img/variable_response_paid_total_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;6c434281d7982a361ffa4b2d7ef3da39&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="paid_interest" class="hasAnchor">
+            <a href="#paid_interest" class="anchor"></a>
+            Feature: paid_interest
+        </h2>
+        <img class="plot" src="img/variable_response_paid_interest_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;b1e136e99a1c2263f8452fe3be13eda0&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="interest_rate" class="hasAnchor">
+            <a href="#interest_rate" class="anchor"></a>
+            Feature: interest_rate
+        </h2>
+        <img class="plot" src="img/variable_response_interest_rate_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;478b8a4f603c621f6c97e53f14463976&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="paid_principal" class="hasAnchor">
+            <a href="#paid_principal" class="anchor"></a>
+            Feature: paid_principal
+        </h2>
+        <img class="plot" src="img/variable_response_paid_principal_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;208cb62ce5b8fe8da51d585a9ff051c9&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="total_debit_limit" class="hasAnchor">
+            <a href="#total_debit_limit" class="anchor"></a>
+            Feature: total_debit_limit
+        </h2>
+        <img class="plot" src="img/variable_response_total_debit_limit_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;d6c16265b58dcfc9a7ae19aa539b311d&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="annual_income" class="hasAnchor">
+            <a href="#annual_income" class="anchor"></a>
+            Feature: annual_income
+        </h2>
+        <img class="plot" src="img/variable_response_annual_income_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;d591ee3ed0c27e332e4b12f800462e70&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="annual_income_joint" class="hasAnchor">
+            <a href="#annual_income_joint" class="anchor"></a>
+            Feature: annual_income_joint
+        </h2>
+        <img class="plot" src="img/variable_response_annual_income_joint_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;6593ed3a086753cfb8d2d373b3b24477&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="emp_length" class="hasAnchor">
+            <a href="#emp_length" class="anchor"></a>
+            Feature: emp_length
+        </h2>
+        <img class="plot" src="img/variable_response_emp_length_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;278834946a402df4b0f47f06d99c4097&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="term" class="hasAnchor">
+            <a href="#term" class="anchor"></a>
+            Feature: term
+        </h2>
+        <img class="plot" src="img/variable_response_term_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;7dcec44b67b78eda4b43fc558435bf69&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="months_since_last_delinq" class="hasAnchor">
+            <a href="#months_since_last_delinq" class="anchor"></a>
+            Feature: months_since_last_delinq
+        </h2>
+        <img class="plot" src="img/variable_response_months_since_last_delinq_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;5334707222e21bbfe7f5b6f97c093187&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="homeownership" class="hasAnchor">
+            <a href="#homeownership" class="anchor"></a>
+            Feature: homeownership
+        </h2>
+        <img class="plot" src="img/variable_response_homeownership_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;8409631f2b28ca76b27ea7ec125a7108&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="debt_to_income" class="hasAnchor">
+            <a href="#debt_to_income" class="anchor"></a>
+            Feature: debt_to_income
+        </h2>
+        <img class="plot" src="img/variable_response_debt_to_income_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;3adc0ebdcfb152c66872970cd2ed4aba&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="debt_to_income_joint" class="hasAnchor">
+            <a href="#debt_to_income_joint" class="anchor"></a>
+            Feature: debt_to_income_joint
+        </h2>
+        <img class="plot" src="img/variable_response_debt_to_income_joint_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;9a5ec0727a5ad518c135b4c43fd5580a&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="verified_income" class="hasAnchor">
+            <a href="#verified_income" class="anchor"></a>
+            Feature: verified_income
+        </h2>
+        <img class="plot" src="img/variable_response_verified_income_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;54b5b2655c89ab0b42221634bfc27fa4&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="verification_income_joint" class="hasAnchor">
+            <a href="#verification_income_joint" class="anchor"></a>
+            Feature: verification_income_joint
+        </h2>
+        <img class="plot" src="img/variable_response_verification_income_joint_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;8a6fb559302f7296119d4bb5201dfbdb&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="months_since_90d_late" class="hasAnchor">
+            <a href="#months_since_90d_late" class="anchor"></a>
+            Feature: months_since_90d_late
+        </h2>
+        <img class="plot" src="img/variable_response_months_since_90d_late_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;9d1420f6a629e7c945743929ab9426e2&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_active_debit_accounts" class="hasAnchor">
+            <a href="#num_active_debit_accounts" class="anchor"></a>
+            Feature: num_active_debit_accounts
+        </h2>
+        <img class="plot" src="img/variable_response_num_active_debit_accounts_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;7df18bb1d0468b8d4116204bad69428f&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="state" class="hasAnchor">
+            <a href="#state" class="anchor"></a>
+            Feature: state
+        </h2>
+        <img class="plot" src="img/variable_response_state_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;f9ff972e4d11aee63af06afab0285415&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="delinq_2y" class="hasAnchor">
+            <a href="#delinq_2y" class="anchor"></a>
+            Feature: delinq_2y
+        </h2>
+        <img class="plot" src="img/variable_response_delinq_2y_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;aa9e03cfe61faa0a462c4f9e3dd507ac&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_collections_last_12m" class="hasAnchor">
+            <a href="#num_collections_last_12m" class="anchor"></a>
+            Feature: num_collections_last_12m
+        </h2>
+        <img class="plot" src="img/variable_response_num_collections_last_12m_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;795af255c57fafe0358b2468c04ae626&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_historical_failed_to_pay" class="hasAnchor">
+            <a href="#num_historical_failed_to_pay" class="anchor"></a>
+            Feature: num_historical_failed_to_pay
+        </h2>
+        <img class="plot" src="img/variable_response_num_historical_failed_to_pay_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;f4343f66f861f244b98140248c905e7b&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="current_accounts_delinq" class="hasAnchor">
+            <a href="#current_accounts_delinq" class="anchor"></a>
+            Feature: current_accounts_delinq
+        </h2>
+        <img class="plot" src="img/variable_response_current_accounts_delinq_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;54e78444ab4ccaae7da2f81a6e2e60da&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="total_collection_amount_ever" class="hasAnchor">
+            <a href="#total_collection_amount_ever" class="anchor"></a>
+            Feature: total_collection_amount_ever
+        </h2>
+        <img class="plot" src="img/variable_response_total_collection_amount_ever_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;a5d2aa7120d903050ee6012645b4fd7b&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="current_installment_accounts" class="hasAnchor">
+            <a href="#current_installment_accounts" class="anchor"></a>
+            Feature: current_installment_accounts
+        </h2>
+        <img class="plot" src="img/variable_response_current_installment_accounts_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;870f4d2f5a74e20953023e7a58cc1821&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_accounts_120d_past_due" class="hasAnchor">
+            <a href="#num_accounts_120d_past_due" class="anchor"></a>
+            Feature: num_accounts_120d_past_due
+        </h2>
+        <img class="plot" src="img/variable_response_num_accounts_120d_past_due_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;db7528c8d1a475cb00e23cfb3e5473c8&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_accounts_30d_past_due" class="hasAnchor">
+            <a href="#num_accounts_30d_past_due" class="anchor"></a>
+            Feature: num_accounts_30d_past_due
+        </h2>
+        <img class="plot" src="img/variable_response_num_accounts_30d_past_due_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;760c39b3fa2a468372fe55a5dc82fe4e&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="tax_liens" class="hasAnchor">
+            <a href="#tax_liens" class="anchor"></a>
+            Feature: tax_liens
+        </h2>
+        <img class="plot" src="img/variable_response_tax_liens_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;b38aac070610e893e06a5614ae193bd7&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="public_record_bankrupt" class="hasAnchor">
+            <a href="#public_record_bankrupt" class="anchor"></a>
+            Feature: public_record_bankrupt
+        </h2>
+        <img class="plot" src="img/variable_response_public_record_bankrupt_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;7cba2f06e0a038470ca53a670fd0b294&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="loan_purpose" class="hasAnchor">
+            <a href="#loan_purpose" class="anchor"></a>
+            Feature: loan_purpose
+        </h2>
+        <img class="plot" src="img/variable_response_loan_purpose_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;7dca7449af91e53955f6cd53788ca83b&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="application_type" class="hasAnchor">
+            <a href="#application_type" class="anchor"></a>
+            Feature: application_type
+        </h2>
+        <img class="plot" src="img/variable_response_application_type_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;10294371fdfe3e87b9a89be391766253&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="loan_amount" class="hasAnchor">
+            <a href="#loan_amount" class="anchor"></a>
+            Feature: loan_amount
+        </h2>
+        <img class="plot" src="img/variable_response_loan_amount_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;55772d6813459d67eada60134546e4b8&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="grade" class="hasAnchor">
+            <a href="#grade" class="anchor"></a>
+            Feature: grade
+        </h2>
+        <img class="plot" src="img/variable_response_grade_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;c59cf8322e2ad2f0c7cd061f3a74e5da&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="sub_grade" class="hasAnchor">
+            <a href="#sub_grade" class="anchor"></a>
+            Feature: sub_grade
+        </h2>
+        <img class="plot" src="img/variable_response_sub_grade_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;70bb8730faea76ce6deb3980819750d9&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="loan_status" class="hasAnchor">
+            <a href="#loan_status" class="anchor"></a>
+            Feature: loan_status
+        </h2>
+        <img class="plot" src="img/variable_response_loan_status_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;19109dec33f1cf02e3a28e2c47905d3a&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="initial_listing_status" class="hasAnchor">
+            <a href="#initial_listing_status" class="anchor"></a>
+            Feature: initial_listing_status
+        </h2>
+        <img class="plot" src="img/variable_response_initial_listing_status_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;ffbef86e231e5e551d4b7f35565ee4ee&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="disbursement_method" class="hasAnchor">
+            <a href="#disbursement_method" class="anchor"></a>
+            Feature: disbursement_method
+        </h2>
+        <img class="plot" src="img/variable_response_disbursement_method_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;0183a0a5ddb181f7ebd2188e19df02dc&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="paid_late_fees" class="hasAnchor">
+            <a href="#paid_late_fees" class="anchor"></a>
+            Feature: paid_late_fees
+        </h2>
+        <img class="plot" src="img/variable_response_paid_late_fees_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;fc318a14207da026e135094745a1099a&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="accounts_opened_24m" class="hasAnchor">
+            <a href="#accounts_opened_24m" class="anchor"></a>
+            Feature: accounts_opened_24m
+        </h2>
+        <img class="plot" src="img/variable_response_accounts_opened_24m_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;ea80d55ecbd8203b170262ed8470adf9&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_open_cc_accounts" class="hasAnchor">
+            <a href="#num_open_cc_accounts" class="anchor"></a>
+            Feature: num_open_cc_accounts
+        </h2>
+        <img class="plot" src="img/variable_response_num_open_cc_accounts_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;2bab2fe3d3cf226e66ef72d9c54f9f37&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_satisfactory_accounts" class="hasAnchor">
+            <a href="#num_satisfactory_accounts" class="anchor"></a>
+            Feature: num_satisfactory_accounts
+        </h2>
+        <img class="plot" src="img/variable_response_num_satisfactory_accounts_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;aa379455e2b391aba2f5a38faf7a4326&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_total_cc_accounts" class="hasAnchor">
+            <a href="#num_total_cc_accounts" class="anchor"></a>
+            Feature: num_total_cc_accounts
+        </h2>
+        <img class="plot" src="img/variable_response_num_total_cc_accounts_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;a7aa04237e2a4dbd88f0c071d200462c&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="earliest_credit_line" class="hasAnchor">
+            <a href="#earliest_credit_line" class="anchor"></a>
+            Feature: earliest_credit_line
+        </h2>
+        <img class="plot" src="img/variable_response_earliest_credit_line_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;530ac5945fae482e6410ab2dc92d2e6c&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="account_never_delinq_percent" class="hasAnchor">
+            <a href="#account_never_delinq_percent" class="anchor"></a>
+            Feature: account_never_delinq_percent
+        </h2>
+        <img class="plot" src="img/variable_response_account_never_delinq_percent_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;cdcd3f9cfe0d68afd91662f903b661e7&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="months_since_last_credit_inquiry" class="hasAnchor">
+            <a href="#months_since_last_credit_inquiry" class="anchor"></a>
+            Feature: months_since_last_credit_inquiry
+        </h2>
+        <img class="plot" src="img/variable_response_months_since_last_credit_inquiry_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;74dd168dc903e5edc2ad7d189963b536&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_mort_accounts" class="hasAnchor">
+            <a href="#num_mort_accounts" class="anchor"></a>
+            Feature: num_mort_accounts
+        </h2>
+        <img class="plot" src="img/variable_response_num_mort_accounts_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;8e52088a3351fb89964acdd3b3c262d6&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="inquiries_last_12m" class="hasAnchor">
+            <a href="#inquiries_last_12m" class="anchor"></a>
+            Feature: inquiries_last_12m
+        </h2>
+        <img class="plot" src="img/variable_response_inquiries_last_12m_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;e7cb2fd0713700e8bfe3e66def47080c&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="open_credit_lines" class="hasAnchor">
+            <a href="#open_credit_lines" class="anchor"></a>
+            Feature: open_credit_lines
+        </h2>
+        <img class="plot" src="img/variable_response_open_credit_lines_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;9b31be156cf0657eddec9fe2b548234e&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="num_cc_carrying_balance" class="hasAnchor">
+            <a href="#num_cc_carrying_balance" class="anchor"></a>
+            Feature: num_cc_carrying_balance
+        </h2>
+        <img class="plot" src="img/variable_response_num_cc_carrying_balance_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;9129200d56133db88dc6ca9ab75455db&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="total_credit_utilized" class="hasAnchor">
+            <a href="#total_credit_utilized" class="anchor"></a>
+            Feature: total_credit_utilized
+        </h2>
+        <img class="plot" src="img/variable_response_total_credit_utilized_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;0f1f4924b17f0081110e80c972a2ac49&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="total_credit_lines" class="hasAnchor">
+            <a href="#total_credit_lines" class="anchor"></a>
+            Feature: total_credit_lines
+        </h2>
+        <img class="plot" src="img/variable_response_total_credit_lines_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;d6869bc47d944cd706f4a702daee2b96&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="issue_month" class="hasAnchor">
+            <a href="#issue_month" class="anchor"></a>
+            Feature: issue_month
+        </h2>
+        <img class="plot" src="img/variable_response_issue_month_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;a49c92c4825c9d3b54453a6912d50083&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="total_credit_limit" class="hasAnchor">
+            <a href="#total_credit_limit" class="anchor"></a>
+            Feature: total_credit_limit
+        </h2>
+        <img class="plot" src="img/variable_response_total_credit_limit_partial.png" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/ema/partialDependenceProfiles.html" docs-url="https://modeloriented.github.io/DALEX/reference/model_profile.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::loadFromLocalRepo(md5hash = &quot;3e70f209593bbeccefe697dea615d286&quot;, repoDir = &quot;tidy_models_explainer_output/repository&quot;)</code></p></div>
+    </div>
+</div>
+    </div>
+
+
+  <footer>
+    <div class="footer">
+      <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2022-08-23 09:02:25 (session_info: <a href="session_info/session_info.txt">.txt</a>, <a href="session_info/session_info.rda">.rda</a>)</div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>

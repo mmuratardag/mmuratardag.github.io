@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="./mi2template.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <script>
+    function makeHelpPanel(help_link, docs_link) {
+      return '\
+            <div class="help-panel">\
+              <div class="title"><i class="fa fa-question" aria-hidden="true"></i> Helpful resources</div>\
+              <a href="' + docs_link + '" target="_blank">Technical documentation</a>\
+              <a href="' + help_link + '" target="_blank">Business description</a>\
+            </div>\
+            ';
+    };
+
+    function renderHelpPanels() {
+      var panel = document.getElementsByTagName("help-panel")[0];
+
+      while(panel) {
+        var docs_url = panel.attributes["docs-url"].value; 
+        var help_url = panel.attributes["help-url"].value;
+        
+        var html = makeHelpPanel(help_url, docs_url);
+        panel.outerHTML = html;
+
+        panel = document.getElementsByTagName("help-panel")[0]; 
+        // Not iterating the result because it changes after each iteration
+      }
+    }
+
+    $(document).ready(function(){
+      renderHelpPanels();
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="container template-home">
+
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top navbar-mi2" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </a>
+            <a class="navbar-brand navbar-mi2" href="./index.html">modelDown</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-mi2 nav navbar-nav">
+              <li>
+                <a href="./index.html">
+                  <span class="fa fa-home fa-lg"></span>
+
+                </a>
+              </li>
+
+              <li>
+                  <a href="./model_performance/index.html">Model Performance</a>
+              </li>
+              <li>
+                  <a href="./variable_importance/index.html">Variable Importance</a>
+              </li>
+              <li>
+                  <a href="./variable_response/index.html">Variable Response</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+      </div>
+      <!--/.navbar -->
+    </header>
+
+    <div class="row" style="position: relative; margin-bottom:60px;">
+      <header class="intro-header">
+  <div class="container text-center">
+    <h1>modelDown</h1>
+    <p class="lead">Explore your model!</p>
+  </div>
+</header>
+
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3 class="my-3">Basic data information</h3>
+    <ul>
+      <li>1970 observations</li>
+      <li>54 columns</li>
+    </ul>
+  </div>
+  <div class="col-md-4" >
+    <h3 class="my-3">Explainers</h3>
+      <ul><li>h2o_exp <a href='explainers/h2o_exp.rda'>(download)</a></li></ul>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="text-center">
+  <h3 class="my-3">Summaries for numerical variables</h3>
+  <br>
+  <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> vars </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> mean </th>
+   <th style="text-align:right;"> sd </th>
+   <th style="text-align:right;"> median </th>
+   <th style="text-align:right;"> trimmed </th>
+   <th style="text-align:right;"> mad </th>
+   <th style="text-align:right;"> min </th>
+   <th style="text-align:right;"> max </th>
+   <th style="text-align:right;"> range </th>
+   <th style="text-align:right;"> skew </th>
+   <th style="text-align:right;"> kurtosis </th>
+   <th style="text-align:right;"> se </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> emp_length </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1799 </td>
+   <td style="text-align:right;"> 5.971095e+00 </td>
+   <td style="text-align:right;"> 3.673742e+00 </td>
+   <td style="text-align:right;"> 6.000 </td>
+   <td style="text-align:right;"> 6.176960e+00 </td>
+   <td style="text-align:right;"> 5.930400e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 10.00 </td>
+   <td style="text-align:right;"> 10.00 </td>
+   <td style="text-align:right;"> -0.1726677 </td>
+   <td style="text-align:right;"> -1.5325444 </td>
+   <td style="text-align:right;"> 0.0866150 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> annual_income </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 7.859044e+04 </td>
+   <td style="text-align:right;"> 6.980111e+04 </td>
+   <td style="text-align:right;"> 65000.000 </td>
+   <td style="text-align:right;"> 6.861898e+04 </td>
+   <td style="text-align:right;"> 3.558240e+04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 1600001.00 </td>
+   <td style="text-align:right;"> 1600001.00 </td>
+   <td style="text-align:right;"> 8.6417635 </td>
+   <td style="text-align:right;"> 143.7518682 </td>
+   <td style="text-align:right;"> 1572.6395372 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> debt_to_income </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1968 </td>
+   <td style="text-align:right;"> 1.930352e+01 </td>
+   <td style="text-align:right;"> 1.311400e+01 </td>
+   <td style="text-align:right;"> 17.710 </td>
+   <td style="text-align:right;"> 1.821669e+01 </td>
+   <td style="text-align:right;"> 1.027442e+01 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 204.13 </td>
+   <td style="text-align:right;"> 204.13 </td>
+   <td style="text-align:right;"> 3.9396960 </td>
+   <td style="text-align:right;"> 38.9155767 </td>
+   <td style="text-align:right;"> 0.2956124 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> annual_income_joint </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 298 </td>
+   <td style="text-align:right;"> 1.230506e+05 </td>
+   <td style="text-align:right;"> 6.583337e+04 </td>
+   <td style="text-align:right;"> 108158.000 </td>
+   <td style="text-align:right;"> 1.143408e+05 </td>
+   <td style="text-align:right;"> 4.782571e+04 </td>
+   <td style="text-align:right;"> 19200.00 </td>
+   <td style="text-align:right;"> 475000.00 </td>
+   <td style="text-align:right;"> 455800.00 </td>
+   <td style="text-align:right;"> 1.8718366 </td>
+   <td style="text-align:right;"> 5.2433299 </td>
+   <td style="text-align:right;"> 3813.6248463 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> debt_to_income_joint </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 298 </td>
+   <td style="text-align:right;"> 2.039648e+01 </td>
+   <td style="text-align:right;"> 8.218795e+00 </td>
+   <td style="text-align:right;"> 19.900 </td>
+   <td style="text-align:right;"> 2.024367e+01 </td>
+   <td style="text-align:right;"> 8.465646e+00 </td>
+   <td style="text-align:right;"> 0.94 </td>
+   <td style="text-align:right;"> 39.98 </td>
+   <td style="text-align:right;"> 39.04 </td>
+   <td style="text-align:right;"> 0.1593849 </td>
+   <td style="text-align:right;"> -0.4077158 </td>
+   <td style="text-align:right;"> 0.4761020 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> delinq_2y </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.461929e-01 </td>
+   <td style="text-align:right;"> 8.136708e-01 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 6.154820e-02 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 13.00 </td>
+   <td style="text-align:right;"> 13.00 </td>
+   <td style="text-align:right;"> 6.5101338 </td>
+   <td style="text-align:right;"> 63.6708340 </td>
+   <td style="text-align:right;"> 0.0183322 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> months_since_last_delinq </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 873 </td>
+   <td style="text-align:right;"> 3.567698e+01 </td>
+   <td style="text-align:right;"> 2.087877e+01 </td>
+   <td style="text-align:right;"> 33.000 </td>
+   <td style="text-align:right;"> 3.449642e+01 </td>
+   <td style="text-align:right;"> 2.372160e+01 </td>
+   <td style="text-align:right;"> 1.00 </td>
+   <td style="text-align:right;"> 109.00 </td>
+   <td style="text-align:right;"> 108.00 </td>
+   <td style="text-align:right;"> 0.4495782 </td>
+   <td style="text-align:right;"> -0.6067384 </td>
+   <td style="text-align:right;"> 0.7066393 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> earliest_credit_line </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.001189e+03 </td>
+   <td style="text-align:right;"> 7.873762e+00 </td>
+   <td style="text-align:right;"> 2003.000 </td>
+   <td style="text-align:right;"> 2.001888e+03 </td>
+   <td style="text-align:right;"> 5.930400e+00 </td>
+   <td style="text-align:right;"> 1967.00 </td>
+   <td style="text-align:right;"> 2015.00 </td>
+   <td style="text-align:right;"> 48.00 </td>
+   <td style="text-align:right;"> -0.9693021 </td>
+   <td style="text-align:right;"> 1.1972985 </td>
+   <td style="text-align:right;"> 0.1773982 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> inquiries_last_12m </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.053300e+00 </td>
+   <td style="text-align:right;"> 2.528397e+00 </td>
+   <td style="text-align:right;"> 1.000 </td>
+   <td style="text-align:right;"> 1.592640e+00 </td>
+   <td style="text-align:right;"> 1.482600e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 29.00 </td>
+   <td style="text-align:right;"> 29.00 </td>
+   <td style="text-align:right;"> 2.7618140 </td>
+   <td style="text-align:right;"> 14.4967855 </td>
+   <td style="text-align:right;"> 0.0569655 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> total_credit_lines </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.256954e+01 </td>
+   <td style="text-align:right;"> 1.190621e+01 </td>
+   <td style="text-align:right;"> 21.000 </td>
+   <td style="text-align:right;"> 2.147525e+01 </td>
+   <td style="text-align:right;"> 1.186080e+01 </td>
+   <td style="text-align:right;"> 2.00 </td>
+   <td style="text-align:right;"> 87.00 </td>
+   <td style="text-align:right;"> 85.00 </td>
+   <td style="text-align:right;"> 0.9273796 </td>
+   <td style="text-align:right;"> 1.0783894 </td>
+   <td style="text-align:right;"> 0.2682503 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> open_credit_lines </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.118325e+01 </td>
+   <td style="text-align:right;"> 5.779724e+00 </td>
+   <td style="text-align:right;"> 10.000 </td>
+   <td style="text-align:right;"> 1.059137e+01 </td>
+   <td style="text-align:right;"> 4.447800e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 1.1403849 </td>
+   <td style="text-align:right;"> 1.9101902 </td>
+   <td style="text-align:right;"> 0.1302189 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> total_credit_limit </td>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.793300e+05 </td>
+   <td style="text-align:right;"> 1.822398e+05 </td>
+   <td style="text-align:right;"> 112853.500 </td>
+   <td style="text-align:right;"> 1.486441e+05 </td>
+   <td style="text-align:right;"> 1.190431e+05 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 1794551.00 </td>
+   <td style="text-align:right;"> 1794551.00 </td>
+   <td style="text-align:right;"> 2.1490940 </td>
+   <td style="text-align:right;"> 7.9990227 </td>
+   <td style="text-align:right;"> 4105.9169899 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> total_credit_utilized </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 5.058582e+04 </td>
+   <td style="text-align:right;"> 5.454308e+04 </td>
+   <td style="text-align:right;"> 36105.000 </td>
+   <td style="text-align:right;"> 4.131143e+04 </td>
+   <td style="text-align:right;"> 3.109457e+04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 783821.00 </td>
+   <td style="text-align:right;"> 783821.00 </td>
+   <td style="text-align:right;"> 4.0371696 </td>
+   <td style="text-align:right;"> 30.7071303 </td>
+   <td style="text-align:right;"> 1228.8718155 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_collections_last_12m </td>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.167510e-02 </td>
+   <td style="text-align:right;"> 1.165168e-01 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 2.00 </td>
+   <td style="text-align:right;"> 2.00 </td>
+   <td style="text-align:right;"> 10.9299994 </td>
+   <td style="text-align:right;"> 133.0179098 </td>
+   <td style="text-align:right;"> 0.0026252 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_historical_failed_to_pay </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.898477e-01 </td>
+   <td style="text-align:right;"> 1.260204e+00 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 4.758880e-02 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 52.00 </td>
+   <td style="text-align:right;"> 52.00 </td>
+   <td style="text-align:right;"> 35.4998193 </td>
+   <td style="text-align:right;"> 1447.8408711 </td>
+   <td style="text-align:right;"> 0.0283928 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> months_since_90d_late </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 462 </td>
+   <td style="text-align:right;"> 4.538961e+01 </td>
+   <td style="text-align:right;"> 2.115360e+01 </td>
+   <td style="text-align:right;"> 46.000 </td>
+   <td style="text-align:right;"> 4.539459e+01 </td>
+   <td style="text-align:right;"> 2.372160e+01 </td>
+   <td style="text-align:right;"> 3.00 </td>
+   <td style="text-align:right;"> 113.00 </td>
+   <td style="text-align:right;"> 110.00 </td>
+   <td style="text-align:right;"> 0.0921192 </td>
+   <td style="text-align:right;"> -0.4888448 </td>
+   <td style="text-align:right;"> 0.9841545 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> current_accounts_delinq </td>
+   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> total_collection_amount_ever </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.773640e+02 </td>
+   <td style="text-align:right;"> 4.589505e+03 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 5.516497e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 199308.00 </td>
+   <td style="text-align:right;"> 199308.00 </td>
+   <td style="text-align:right;"> 41.4894455 </td>
+   <td style="text-align:right;"> 1792.5907915 </td>
+   <td style="text-align:right;"> 103.4028986 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> current_installment_accounts </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.582741e+00 </td>
+   <td style="text-align:right;"> 2.755208e+00 </td>
+   <td style="text-align:right;"> 2.000 </td>
+   <td style="text-align:right;"> 2.094543e+00 </td>
+   <td style="text-align:right;"> 1.482600e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 23.00 </td>
+   <td style="text-align:right;"> 23.00 </td>
+   <td style="text-align:right;"> 2.6152301 </td>
+   <td style="text-align:right;"> 9.8122813 </td>
+   <td style="text-align:right;"> 0.0620756 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> accounts_opened_24m </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 4.330965e+00 </td>
+   <td style="text-align:right;"> 3.150226e+00 </td>
+   <td style="text-align:right;"> 4.000 </td>
+   <td style="text-align:right;"> 3.951777e+00 </td>
+   <td style="text-align:right;"> 2.965200e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 20.00 </td>
+   <td style="text-align:right;"> 20.00 </td>
+   <td style="text-align:right;"> 1.2250118 </td>
+   <td style="text-align:right;"> 1.9383177 </td>
+   <td style="text-align:right;"> 0.0709755 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> months_since_last_credit_inquiry </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 1723 </td>
+   <td style="text-align:right;"> 7.138712e+00 </td>
+   <td style="text-align:right;"> 5.861935e+00 </td>
+   <td style="text-align:right;"> 6.000 </td>
+   <td style="text-align:right;"> 6.483684e+00 </td>
+   <td style="text-align:right;"> 5.930400e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 24.00 </td>
+   <td style="text-align:right;"> 24.00 </td>
+   <td style="text-align:right;"> 0.8498946 </td>
+   <td style="text-align:right;"> -0.0878569 </td>
+   <td style="text-align:right;"> 0.1412207 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_satisfactory_accounts </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.115279e+01 </td>
+   <td style="text-align:right;"> 5.761865e+00 </td>
+   <td style="text-align:right;"> 10.000 </td>
+   <td style="text-align:right;"> 1.056599e+01 </td>
+   <td style="text-align:right;"> 4.447800e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 40.00 </td>
+   <td style="text-align:right;"> 1.1396929 </td>
+   <td style="text-align:right;"> 1.9220611 </td>
+   <td style="text-align:right;"> 0.1298165 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_accounts_120d_past_due </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 1913 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_accounts_30d_past_due </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> NaN </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_active_debit_accounts </td>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 3.573096e+00 </td>
+   <td style="text-align:right;"> 2.427201e+00 </td>
+   <td style="text-align:right;"> 3.000 </td>
+   <td style="text-align:right;"> 3.283629e+00 </td>
+   <td style="text-align:right;"> 1.482600e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 22.00 </td>
+   <td style="text-align:right;"> 22.00 </td>
+   <td style="text-align:right;"> 1.5102179 </td>
+   <td style="text-align:right;"> 4.7217362 </td>
+   <td style="text-align:right;"> 0.0546855 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> total_debit_limit </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.689054e+04 </td>
+   <td style="text-align:right;"> 2.752258e+04 </td>
+   <td style="text-align:right;"> 19000.000 </td>
+   <td style="text-align:right;"> 2.224336e+04 </td>
+   <td style="text-align:right;"> 1.719816e+04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 386700.00 </td>
+   <td style="text-align:right;"> 386700.00 </td>
+   <td style="text-align:right;"> 3.1978434 </td>
+   <td style="text-align:right;"> 21.5899126 </td>
+   <td style="text-align:right;"> 620.0918803 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_total_cc_accounts </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.294061e+01 </td>
+   <td style="text-align:right;"> 7.856769e+00 </td>
+   <td style="text-align:right;"> 11.000 </td>
+   <td style="text-align:right;"> 1.199175e+01 </td>
+   <td style="text-align:right;"> 7.413000e+00 </td>
+   <td style="text-align:right;"> 2.00 </td>
+   <td style="text-align:right;"> 55.00 </td>
+   <td style="text-align:right;"> 53.00 </td>
+   <td style="text-align:right;"> 1.2988028 </td>
+   <td style="text-align:right;"> 2.3342792 </td>
+   <td style="text-align:right;"> 0.1770153 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_open_cc_accounts </td>
+   <td style="text-align:right;"> 28 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 7.960406e+00 </td>
+   <td style="text-align:right;"> 4.902239e+00 </td>
+   <td style="text-align:right;"> 7.000 </td>
+   <td style="text-align:right;"> 7.334391e+00 </td>
+   <td style="text-align:right;"> 4.447800e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 35.00 </td>
+   <td style="text-align:right;"> 35.00 </td>
+   <td style="text-align:right;"> 1.4647678 </td>
+   <td style="text-align:right;"> 3.2105900 </td>
+   <td style="text-align:right;"> 0.1104489 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_cc_carrying_balance </td>
+   <td style="text-align:right;"> 29 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 5.184772e+00 </td>
+   <td style="text-align:right;"> 3.260701e+00 </td>
+   <td style="text-align:right;"> 4.000 </td>
+   <td style="text-align:right;"> 4.810279e+00 </td>
+   <td style="text-align:right;"> 2.965200e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 25.00 </td>
+   <td style="text-align:right;"> 25.00 </td>
+   <td style="text-align:right;"> 1.2246163 </td>
+   <td style="text-align:right;"> 2.1576073 </td>
+   <td style="text-align:right;"> 0.0734646 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> num_mort_accounts </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.372589e+00 </td>
+   <td style="text-align:right;"> 1.714296e+00 </td>
+   <td style="text-align:right;"> 1.000 </td>
+   <td style="text-align:right;"> 1.069162e+00 </td>
+   <td style="text-align:right;"> 1.482600e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 12.00 </td>
+   <td style="text-align:right;"> 12.00 </td>
+   <td style="text-align:right;"> 1.6633129 </td>
+   <td style="text-align:right;"> 3.6918077 </td>
+   <td style="text-align:right;"> 0.0386236 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> account_never_delinq_percent </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 9.424670e+01 </td>
+   <td style="text-align:right;"> 9.925723e+00 </td>
+   <td style="text-align:right;"> 100.000 </td>
+   <td style="text-align:right;"> 9.657582e+01 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 21.70 </td>
+   <td style="text-align:right;"> 100.00 </td>
+   <td style="text-align:right;"> 78.30 </td>
+   <td style="text-align:right;"> -2.5921399 </td>
+   <td style="text-align:right;"> 8.6630383 </td>
+   <td style="text-align:right;"> 0.2236295 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> tax_liens </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 7.106600e-02 </td>
+   <td style="text-align:right;"> 1.212775e+00 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 52.00 </td>
+   <td style="text-align:right;"> 52.00 </td>
+   <td style="text-align:right;"> 40.0108690 </td>
+   <td style="text-align:right;"> 1703.7534995 </td>
+   <td style="text-align:right;"> 0.0273242 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> public_record_bankrupt </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.187817e-01 </td>
+   <td style="text-align:right;"> 3.313676e-01 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 2.093910e-02 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 3.00 </td>
+   <td style="text-align:right;"> 3.00 </td>
+   <td style="text-align:right;"> 2.6458635 </td>
+   <td style="text-align:right;"> 6.7335624 </td>
+   <td style="text-align:right;"> 0.0074658 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> loan_amount </td>
+   <td style="text-align:right;"> 34 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.597442e+04 </td>
+   <td style="text-align:right;"> 1.040104e+04 </td>
+   <td style="text-align:right;"> 14000.000 </td>
+   <td style="text-align:right;"> 1.492119e+04 </td>
+   <td style="text-align:right;"> 9.636900e+03 </td>
+   <td style="text-align:right;"> 1000.00 </td>
+   <td style="text-align:right;"> 40000.00 </td>
+   <td style="text-align:right;"> 39000.00 </td>
+   <td style="text-align:right;"> 0.7566205 </td>
+   <td style="text-align:right;"> -0.3685285 </td>
+   <td style="text-align:right;"> 234.3384114 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> term </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 4.268832e+01 </td>
+   <td style="text-align:right;"> 1.076313e+01 </td>
+   <td style="text-align:right;"> 36.000 </td>
+   <td style="text-align:right;"> 4.136041e+01 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 36.00 </td>
+   <td style="text-align:right;"> 60.00 </td>
+   <td style="text-align:right;"> 24.00 </td>
+   <td style="text-align:right;"> 0.9865123 </td>
+   <td style="text-align:right;"> -1.0273142 </td>
+   <td style="text-align:right;"> 0.2424964 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> interest_rate </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.254260e+01 </td>
+   <td style="text-align:right;"> 5.027839e+00 </td>
+   <td style="text-align:right;"> 11.990 </td>
+   <td style="text-align:right;"> 1.209495e+01 </td>
+   <td style="text-align:right;"> 4.536756e+00 </td>
+   <td style="text-align:right;"> 5.31 </td>
+   <td style="text-align:right;"> 30.79 </td>
+   <td style="text-align:right;"> 25.48 </td>
+   <td style="text-align:right;"> 0.8088805 </td>
+   <td style="text-align:right;"> 0.4405929 </td>
+   <td style="text-align:right;"> 0.1132787 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> installment </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 4.710042e+02 </td>
+   <td style="text-align:right;"> 3.034958e+02 </td>
+   <td style="text-align:right;"> 381.095 </td>
+   <td style="text-align:right;"> 4.360474e+02 </td>
+   <td style="text-align:right;"> 2.636952e+02 </td>
+   <td style="text-align:right;"> 32.01 </td>
+   <td style="text-align:right;"> 1370.95 </td>
+   <td style="text-align:right;"> 1338.94 </td>
+   <td style="text-align:right;"> 0.9334857 </td>
+   <td style="text-align:right;"> 0.1538191 </td>
+   <td style="text-align:right;"> 6.8378509 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> balance </td>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.408310e+04 </td>
+   <td style="text-align:right;"> 9.974823e+03 </td>
+   <td style="text-align:right;"> 11572.795 </td>
+   <td style="text-align:right;"> 1.314072e+04 </td>
+   <td style="text-align:right;"> 9.622445e+03 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 40000.00 </td>
+   <td style="text-align:right;"> 40000.00 </td>
+   <td style="text-align:right;"> 0.7359017 </td>
+   <td style="text-align:right;"> -0.3384565 </td>
+   <td style="text-align:right;"> 224.7357087 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> paid_total </td>
+   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 2.473695e+03 </td>
+   <td style="text-align:right;"> 3.958244e+03 </td>
+   <td style="text-align:right;"> 1540.900 </td>
+   <td style="text-align:right;"> 1.744242e+03 </td>
+   <td style="text-align:right;"> 1.208927e+03 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 41062.81 </td>
+   <td style="text-align:right;"> 41062.81 </td>
+   <td style="text-align:right;"> 5.6446932 </td>
+   <td style="text-align:right;"> 38.2524672 </td>
+   <td style="text-align:right;"> 89.1804002 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> paid_principal </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.887671e+03 </td>
+   <td style="text-align:right;"> 3.880370e+03 </td>
+   <td style="text-align:right;"> 963.895 </td>
+   <td style="text-align:right;"> 1.137060e+03 </td>
+   <td style="text-align:right;"> 7.302843e+02 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 40000.00 </td>
+   <td style="text-align:right;"> 40000.00 </td>
+   <td style="text-align:right;"> 5.9738053 </td>
+   <td style="text-align:right;"> 41.1041225 </td>
+   <td style="text-align:right;"> 87.4258920 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> paid_interest </td>
+   <td style="text-align:right;"> 41 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 5.858843e+02 </td>
+   <td style="text-align:right;"> 5.021715e+02 </td>
+   <td style="text-align:right;"> 440.265 </td>
+   <td style="text-align:right;"> 5.101494e+02 </td>
+   <td style="text-align:right;"> 4.042754e+02 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 3458.67 </td>
+   <td style="text-align:right;"> 3458.67 </td>
+   <td style="text-align:right;"> 1.5211338 </td>
+   <td style="text-align:right;"> 2.9181833 </td>
+   <td style="text-align:right;"> 11.3140732 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> paid_late_fees </td>
+   <td style="text-align:right;"> 42 </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 1.393503e-01 </td>
+   <td style="text-align:right;"> 1.890554e+00 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.000000e+00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 42.91 </td>
+   <td style="text-align:right;"> 42.91 </td>
+   <td style="text-align:right;"> 15.3966367 </td>
+   <td style="text-align:right;"> 261.4202618 </td>
+   <td style="text-align:right;"> 0.0425947 </td>
+  </tr>
+</tbody>
+</table>
+  <hr>
+    <h3 class="my-3">Summaries for categorical variables</h3>
+    <br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> state </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> AK </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AL </td>
+   <td style="text-align:right;"> 26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AR </td>
+   <td style="text-align:right;"> 13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AZ </td>
+   <td style="text-align:right;"> 52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CA </td>
+   <td style="text-align:right;"> 264 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CO </td>
+   <td style="text-align:right;"> 48 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CT </td>
+   <td style="text-align:right;"> 45 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> DC </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> DE </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FL </td>
+   <td style="text-align:right;"> 158 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GA </td>
+   <td style="text-align:right;"> 51 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> HI </td>
+   <td style="text-align:right;"> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ID </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> IL </td>
+   <td style="text-align:right;"> 60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> IN </td>
+   <td style="text-align:right;"> 37 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> KS </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> KY </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LA </td>
+   <td style="text-align:right;"> 17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MA </td>
+   <td style="text-align:right;"> 52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MD </td>
+   <td style="text-align:right;"> 42 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ME </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MI </td>
+   <td style="text-align:right;"> 48 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MN </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MO </td>
+   <td style="text-align:right;"> 28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MS </td>
+   <td style="text-align:right;"> 20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MT </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NC </td>
+   <td style="text-align:right;"> 62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ND </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NE </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NH </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NJ </td>
+   <td style="text-align:right;"> 63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NM </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NV </td>
+   <td style="text-align:right;"> 26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NY </td>
+   <td style="text-align:right;"> 147 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OH </td>
+   <td style="text-align:right;"> 71 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OK </td>
+   <td style="text-align:right;"> 17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OR </td>
+   <td style="text-align:right;"> 29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PA </td>
+   <td style="text-align:right;"> 49 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> RI </td>
+   <td style="text-align:right;"> 14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SC </td>
+   <td style="text-align:right;"> 32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SD </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TN </td>
+   <td style="text-align:right;"> 31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TX </td>
+   <td style="text-align:right;"> 158 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> UT </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> VA </td>
+   <td style="text-align:right;"> 56 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> VT </td>
+   <td style="text-align:right;"> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> WA </td>
+   <td style="text-align:right;"> 51 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> WI </td>
+   <td style="text-align:right;"> 32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> WV </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> WY </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> homeownership </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> MORTGAGE </td>
+   <td style="text-align:right;"> 947 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OWN </td>
+   <td style="text-align:right;"> 267 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> RENT </td>
+   <td style="text-align:right;"> 756 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> verified_income </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Not Verified </td>
+   <td style="text-align:right;"> 704 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Source Verified </td>
+   <td style="text-align:right;"> 799 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Verified </td>
+   <td style="text-align:right;"> 467 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> verification_income_joint </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Not Verified </td>
+   <td style="text-align:right;"> 111 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Source Verified </td>
+   <td style="text-align:right;"> 97 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Verified </td>
+   <td style="text-align:right;"> 83 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> loan_purpose </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> car </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> credit_card </td>
+   <td style="text-align:right;"> 430 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> debt_consolidation </td>
+   <td style="text-align:right;"> 1009 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> home_improvement </td>
+   <td style="text-align:right;"> 143 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> house </td>
+   <td style="text-align:right;"> 32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> major_purchase </td>
+   <td style="text-align:right;"> 67 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> medical </td>
+   <td style="text-align:right;"> 30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> moving </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 167 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> small_business </td>
+   <td style="text-align:right;"> 32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> vacation </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> application_type </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> individual </td>
+   <td style="text-align:right;"> 1672 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> joint </td>
+   <td style="text-align:right;"> 298 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> grade </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 475 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 573 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C </td>
+   <td style="text-align:right;"> 538 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D </td>
+   <td style="text-align:right;"> 305 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E </td>
+   <td style="text-align:right;"> 66 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> G </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> sub_grade </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> A1 </td>
+   <td style="text-align:right;"> 90 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A2 </td>
+   <td style="text-align:right;"> 82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A3 </td>
+   <td style="text-align:right;"> 100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A4 </td>
+   <td style="text-align:right;"> 106 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A5 </td>
+   <td style="text-align:right;"> 97 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B1 </td>
+   <td style="text-align:right;"> 125 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B2 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B3 </td>
+   <td style="text-align:right;"> 91 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B4 </td>
+   <td style="text-align:right;"> 116 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B5 </td>
+   <td style="text-align:right;"> 115 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C1 </td>
+   <td style="text-align:right;"> 130 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C2 </td>
+   <td style="text-align:right;"> 115 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C3 </td>
+   <td style="text-align:right;"> 99 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C4 </td>
+   <td style="text-align:right;"> 97 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C5 </td>
+   <td style="text-align:right;"> 97 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D1 </td>
+   <td style="text-align:right;"> 74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D2 </td>
+   <td style="text-align:right;"> 65 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D3 </td>
+   <td style="text-align:right;"> 62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D4 </td>
+   <td style="text-align:right;"> 46 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D5 </td>
+   <td style="text-align:right;"> 58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E1 </td>
+   <td style="text-align:right;"> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E2 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E3 </td>
+   <td style="text-align:right;"> 17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E4 </td>
+   <td style="text-align:right;"> 17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E5 </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F1 </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F2 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F3 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> G1 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> issue_month </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Feb-2018 </td>
+   <td style="text-align:right;"> 570 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jan-2018 </td>
+   <td style="text-align:right;"> 688 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mar-2018 </td>
+   <td style="text-align:right;"> 712 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> loan_status </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Charged Off </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Current </td>
+   <td style="text-align:right;"> 1847 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fully Paid </td>
+   <td style="text-align:right;"> 80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> In Grace Period </td>
+   <td style="text-align:right;"> 24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Late (16-30 days) </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Late (31-120 days) </td>
+   <td style="text-align:right;"> 13 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> initial_listing_status </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> fractional </td>
+   <td style="text-align:right;"> 368 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> whole </td>
+   <td style="text-align:right;"> 1602 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> disbursement_method </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cash </td>
+   <td style="text-align:right;"> 1839 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> DirectPay </td>
+   <td style="text-align:right;"> 131 </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<br>
+<br>
+    </div>
+
+
+  <footer>
+    <div class="footer">
+      <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2022-08-23 08:56:42 (session_info: <a href="session_info/session_info.txt">.txt</a>, <a href="session_info/session_info.rda">.rda</a>)</div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>
