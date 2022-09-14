@@ -10,6 +10,9 @@ navbar:
       icon: fa-solid fa-file-pdf
       href: static/MMA_DS_resume.pdf
   right:
+    - text: "Portfolio"
+      icon: bi bi-folder2-open
+      href: https://mmuratardag.github.io/portfolio_website
     - text: "Academic Website"
       icon: fa-blog
       href: https://mmuratardag.github.io/academic_website

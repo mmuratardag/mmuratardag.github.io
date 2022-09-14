@@ -28,7 +28,7 @@ icons::fontawesome$brands$github
 ```{r}
 icons::fontawesome$brands$linkedin
 ```
-](https://www.linkedin.com/in/mmuratardag){target="_blank"} profile.
+](https://www.linkedin.com/in/mmuratardag){target="_blank"} profile; browsing my [portfolio website](https://mmuratardag.github.io/portfolio_website/) is another option.
 </div>
 
 <div>
