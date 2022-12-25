@@ -13,7 +13,7 @@
 
 <title>MMA, Ph.D., Contact</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -169,8 +169,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -178,16 +178,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -312,12 +305,10 @@ amm</span></p>
 <p><br /> <br /> <br /> <br /> <br /> <br /></p>
 <p>GDPR &amp; LEGAL DISCLAIMER <br> The new General Data Protection
 Regulation (GDPR), May 25 2018, requires a data transparency statement.
-This site is made with R Markdown and hosted on GitHub. I do not set any
-cookies, I do not track any visitors, I do not collect any type of data.
-Read <a
+This site is made with R Markdown and hosted on GitHub. Read <a
 href="https://docs.github.com/en/github/site-policy/github-terms-of-service"
-target="_blank">this</a> to have an idea about what GitHub’s ToS
-are.</p>
+target="_blank">this</a> to have an idea about what GitHub’s ToS are. I
+use no plugins or back-end software to collect visitor data.</p>
 
 
 
