@@ -13,7 +13,7 @@
 
 <title>M. Murat Ardag, Ph.D.</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -169,8 +169,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -178,16 +178,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -336,7 +329,7 @@ href="https://mmuratardag.github.io/blog_posts">here</a>.</p>
 <hr />
 <ol>
 <li id="fn1"><p>In case, you are wondering what political psychology is
-<a href="https://pprg.stanford.edu/what-is-political-psychology"
+<a href="https://pprg.stanford.edu/what-political-psychology"
 target="_blank">this</a>, <a
 href="https://en.wikipedia.org/wiki/Political_psychology"
 target="_blank">this</a> &amp; <a href="https://ispp.org"
