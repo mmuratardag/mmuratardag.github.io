@@ -15,9 +15,13 @@ knitr::opts_chunk$set(echo = F)
 I am a data scientist and a political psychologist[^1] with a background in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.
 </div>
 
+<br>
+
 <div>
 With my current background and formal training, I am a data practitioner in the following methods, techniques and modeling mindsets. Machine learning, deep learning, natural language processing, time series, statistical inference (frequentist & Bayesian), the general structural equation modeling framework, psychometric networks, social network analysis, and survival analysis.
 </div>
+
+<br>
 
 <div>
 I work as a data scientist at [BCW Global, Europe & Africa](https://www.bcw-global.com/){target="_blank"}. I am also an affiliated Postdoc Fellow at [Bremen Graduate School of Social Sciences](https://www.bigsss-bremen.de/){target="_blank"}. In addition, I currently serve as the Turkish Language Group Leader in the [European Commission Joint Research Centre](https://joint-research-centre.ec.europa.eu/index_en){target="_blank"}’s ValuesML project.
