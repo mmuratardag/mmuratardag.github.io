@@ -6,9 +6,6 @@ navbar:
     - text: "Home"
       icon: fa-home
       href: index.html
-    - text: "CV"
-      icon: fa-solid fa-file-pdf
-      href: static/MMA_DS_resume.pdf
   right:
     - text: "Portfolio"
       icon: bi bi-folder2-open
