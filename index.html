@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mmuratardag.github.io/portfolio_website" rel="" target="">
+    <a class="nav-link" href="https://mmuratardag.github.io/portfolio_website/portfolio.html" rel="" target="">
  <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
@@ -137,7 +137,48 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>My domain expertise is particularly relevant to political consulting, targeted communication, and public administration. My track record includes work on consumer behavior, customer segmentation, institutional culture, and mental well-being.</p>
 <p>I’m currently taking a career break to improve my German and am open to work opportunities. I worked as a data scientist at <a href="https://www.bcw-global.com/" target="_blank">BCW Global, Europe &amp; Africa</a> between 02/2022 - 05/2024. I served as the Turkish Language Group Leader in the <a href="https://joint-research-centre.ec.europa.eu/index_en" target="_blank">European Commission Joint Research Centre</a>’s <a href="https://knowledge4policy.ec.europa.eu/projects-activities/valuesml-unravelling-expressed-values-media-informed-policy-making_en" target="_blank">ValuesML - Unravelling Expressed Values in the Media for Informed Policy Making</a> project between 12/2023 - 05/2024. I am a former academic; I was an affiliated Postdoc Fellow at <a href="https://www.bigsss-bremen.de/" target="_blank">Bremen Graduate School of Social Sciences</a> until 06/2024.</p>
-<p>Some of my projects are available on <a href="https://github.com/mmuratardag" target="_blank"><i class="fa-brands fa-github" aria-label="github"></i></a>; browsing my <a href="https://mmuratardag.github.io/portfolio_website/portfolio.html">portfolio website</a> is another option. Feel free to connect on <a href="https://www.linkedin.com/in/mmuratardag" target="_blank"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a>.</p>
+<p>Some of my projects are available on <a href="https://github.com/mmuratardag" target="_blank"><i class="fa-brands fa-github" aria-label="github"></i></a>; browsing my <a href="https://mmuratardag.github.io/portfolio_website/portfolio.html">portfolio website</a> is another option.</p>
+<!-- script and placeholder -->
+<div id="total-downloads">
+
+</div>
+<script>
+  // Define the two API endpoints
+  const urls = [
+    "https://huggingface.co/api/models/MMADS/MoralFoundationsClassifier?expand[]=downloads&expand[]=downloadsAllTime",
+    "https://huggingface.co/api/models/MMADS/RoBERTa-OrgCulture-Classifier?expand[]=downloads&expand[]=downloadsAllTime"
+  ];
+
+  // Function to fetch and display the total downloads
+  async function displayTotalDownloads() {
+    try {
+      // Fetch data from both endpoints concurrently
+      const responses = await Promise.all(
+        urls.map(url => fetch(url).then(response => response.json()))
+      );
+      
+      // Sum up the total downloads from both models
+      const totalDownloads = responses.reduce((sum, modelData) => {
+        return sum + (modelData.downloadsAllTime || 0);
+      }, 0);
+      
+      // Insert the download count and a small Hugging Face logo into the placeholder
+      const container = document.getElementById('total-downloads');
+      container.innerHTML = `
+        I have two fine-tuned models available at <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face Logo" style="width: 1em; vertical-align: middle; margin-right: 0.25em;">
+        so far, they have been downloaded <italic>${totalDownloads.toLocaleString()}</italic> times.
+      `;
+    } catch (error) {
+      console.error("Error fetching download counts:", error);
+    }
+  }
+
+  // Run the function immediately
+  displayTotalDownloads();
+</script>
+<!-- End of script -->
+<p><a href="https://huggingface.co/MMADS" target="_blank">Go check these models out</a>.</p>
+<p>Feel free to connect on <a href="https://www.linkedin.com/in/mmuratardag" target="_blank"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a>.</p>
 <p>To find out more about me as the political psychologist, visit my <a href="https://mmuratardag.github.io/academic_website">academic website</a>.</p>
 <p>I occasionally make blogposts; read them <a href="https://mmuratardag.github.io/blog_posts">here</a>.</p>
 
