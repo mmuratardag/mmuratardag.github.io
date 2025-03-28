@@ -136,47 +136,62 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>My domain expertise is particularly relevant to political consulting, targeted communication, and public administration. My track record includes work on consumer behavior, customer segmentation, institutional culture, and mental well-being.</p>
-<p>I’m currently taking a career break to improve my German and am open to work opportunities. I worked as a data scientist at <a href="https://www.bcw-global.com/" target="_blank">BCW Global, Europe &amp; Africa</a> between 02/2022 - 05/2024. I served as the Turkish Language Group Leader in the <a href="https://joint-research-centre.ec.europa.eu/index_en" target="_blank">European Commission Joint Research Centre</a>’s <a href="https://knowledge4policy.ec.europa.eu/projects-activities/valuesml-unravelling-expressed-values-media-informed-policy-making_en" target="_blank">ValuesML - Unravelling Expressed Values in the Media for Informed Policy Making</a> project between 12/2023 - 05/2024. I am a former academic; I was an affiliated Postdoc Fellow at <a href="https://www.bigsss-bremen.de/" target="_blank">Bremen Graduate School of Social Sciences</a> until 06/2024.</p>
+<p>I am currently taking a career break to pursue education in cybersecurity for my professional development.</p>
+<p>I worked as a data scientist at <a href="https://www.bcw-global.com/" target="_blank">BCW Global, Europe &amp; Africa</a> between 02/2022 - 05/2024. I served as the Turkish Language Group Leader in the <a href="https://joint-research-centre.ec.europa.eu/index_en" target="_blank">European Commission Joint Research Centre</a>’s <a href="https://knowledge4policy.ec.europa.eu/projects-activities/valuesml-unravelling-expressed-values-media-informed-policy-making_en" target="_blank">ValuesML - Unravelling Expressed Values in the Media for Informed Policy Making</a> project between 12/2023 - 05/2024. I am a former academic; I was an affiliated Postdoc Fellow at <a href="https://www.bigsss-bremen.de/" target="_blank">Bremen Graduate School of Social Sciences</a> until 06/2024.</p>
 <p>Some of my projects are available on <a href="https://github.com/mmuratardag" target="_blank"><i class="fa-brands fa-github" aria-label="github"></i></a>; browsing my <a href="https://mmuratardag.github.io/portfolio_website/portfolio.html">portfolio website</a> is another option.</p>
-<!-- script and placeholder -->
 <div id="total-downloads">
-
-</div>
 <script>
   // Define the two API endpoints
-  const urls = [
-    "https://huggingface.co/api/models/MMADS/MoralFoundationsClassifier?expand[]=downloads&expand[]=downloadsAllTime",
-    "https://huggingface.co/api/models/MMADS/RoBERTa-OrgCulture-Classifier?expand[]=downloads&expand[]=downloadsAllTime"
-  ];
+const urls = [
+  "https://huggingface.co/api/models/MMADS/MoralFoundationsClassifier?expand[]=downloads&expand[]=downloadsAllTime",
+  "https://huggingface.co/api/models/MMADS/RoBERTa-OrgCulture-Classifier?expand[]=downloads&expand[]=downloadsAllTime"
+];
 
-  // Function to fetch and display the total downloads
-  async function displayTotalDownloads() {
-    try {
-      // Fetch data from both endpoints concurrently
-      const responses = await Promise.all(
-        urls.map(url => fetch(url).then(response => response.json()))
-      );
+// Function to fetch and display the total downloads
+async function displayTotalDownloads() {
+  try {
+    // Fetch data from both endpoints concurrently
+    const responses = await Promise.all(
+      urls.map(url => fetch(url).then(response => response.json()))
+    );
+    
+    // Sum up the total downloads from both models
+    const totalDownloads = responses.reduce((sum, modelData) => {
+      return sum + (modelData.downloadsAllTime || 0);
+    }, 0);
+    
+    // Insert the download count and a small Hugging Face logo into the placeholder
+    const container = document.getElementById('total-downloads');
+    if (container) {
+      // Clear any existing content
+      container.textContent = '';
       
-      // Sum up the total downloads from both models
-      const totalDownloads = responses.reduce((sum, modelData) => {
-        return sum + (modelData.downloadsAllTime || 0);
-      }, 0);
+      // Create text nodes and elements
+      const textBefore = document.createTextNode('I have two fine-tuned models available at ');
+      container.appendChild(textBefore);
       
-      // Insert the download count and a small Hugging Face logo into the placeholder
-      const container = document.getElementById('total-downloads');
-      container.innerHTML = `
-        I have two fine-tuned models available at <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face Logo" style="width: 1em; vertical-align: middle; margin-right: 0.25em;">
-        so far, they have been downloaded <italic>${totalDownloads.toLocaleString()}</italic> times.
-      `;
-    } catch (error) {
-      console.error("Error fetching download counts:", error);
+      const img = document.createElement('img');
+      img.src = 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg';
+      img.alt = 'Hugging Face Logo';
+      img.style.width = '1em';
+      img.style.verticalAlign = 'middle';
+      img.style.marginRight = '0.25em';
+      container.appendChild(img);
+      
+      const textAfter = document.createTextNode(` so far, they have been downloaded ${totalDownloads.toLocaleString()} times.`);
+      container.appendChild(textAfter);
+    } else {
+      console.error("Container element not found");
     }
+  } catch (error) {
+    console.error("Error fetching download counts:", error);
   }
+}
 
-  // Run the function immediately
-  displayTotalDownloads();
+// Run the function immediately
+displayTotalDownloads();
 </script>
-<!-- End of script -->
+</div>
 <p><a href="https://huggingface.co/MMADS" target="_blank">Go check these models out</a>.</p>
 <p>To find out more about me as the political psychologist, visit my <a href="https://mmuratardag.github.io/academic_website">academic website</a>.</p>
 <p>I occasionally make blogposts; read them <a href="https://mmuratardag.github.io/blog_posts">here</a>.</p>
