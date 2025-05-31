@@ -5,6 +5,6 @@
 
 User-agent: *
 
-Disallow: /?loop=
+Disallow: /?loop=/
 Allow: /?loop=/
 # Disallow: /
