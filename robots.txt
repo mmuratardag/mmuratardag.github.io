@@ -1,0 +1,10 @@
+# Pick one of the following
+# or ignore
+# can still access everything if you try
+# there's nothing worth crawling here, tho.
+
+User-agent: *
+
+Disallow: /?loop=
+Allow: /?loop=/
+# Disallow: /
