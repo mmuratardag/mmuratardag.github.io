@@ -1,18 +1,74 @@
-
 <!DOCTYPE html>
+<!--
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KZWFzdGVyX2VnZ180X2RfY3VyaW91c19jYXQKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KZWFzeXBlYXN5Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkwwMFA6bG9vcAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpodHRwczovL2lzLmdkL1dWWnZuSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo=
+-->
 <html>
-<head>
+  <head>
     <title>loop</title>
     <meta http-equiv="refresh" content="0; url=./">
-</head>
-<body>
+    <style>
+      pre {
+        background-color: #f6f8fa;
+        padding: 16px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+      code {
+        font-family: Consolas, "Courier New", monospace;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
     <h1>loop</h1>
-    <p>loop</p>
+    <div>loop</div>
     <script>
-        window.location.href = './';
+      async function cheeky_S_Function_for_M_crawlers() {
+        try {
+          const response = await fetch(window.location.href);
+          if (response.ok) {
+            setTimeout(cheeky_S_Function_for_M_crawlers, 1000);
+          } else {
+            console.error('Error:', response.status);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      }
+      cheeky_S_Function_for_M_crawlers();
+      window.location.href = './';
+      // Pathetic function:
+      // function pathetic_function_for_non_modern_crawlers() {
+      //   var xhr = new XMLHttpRequest();
+      //   xhr.open('GET', window.location.href, true);
+      //   xhr.onload = function() {
+      //     if (xhr.status === 200) {
+      //       pathetic_function_for_non_modern_crawlers();
+      //     }
+      //   };
+      //   xhr.send();
+      // }
+      // pathetic_function_for_non_modern_crawlers();
+      // window.location.href = './';
     </script>
     <noscript>
-        <meta http-equiv="refresh" content="0; url=./">
+      <meta http-equiv="refresh" content="0; url=./">
     </noscript>
-</body>
+    <pre><code class="language-python">
+flumplenax = 666
+while flazzle > wizzle:
+  froobulate += 42
+  if jimjam == "wibble":
+    wumwum = flibberdigibbet * 1337
+    print("&#128002; &#x1f4a9;")
+  else:
+    thingamajig = flumplenax / squibble
+    for wizzle in range(10):
+      flibulux = wum + wumwum
+      if flazzle == wibble:
+        break
+      else:
+        continue
+  </code></pre>
+  </body>
 </html>
