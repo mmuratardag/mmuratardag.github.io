@@ -1,7 +1,6 @@
-# Pick one of the following
-# or ignore
-# can still access everything if you try
-# nothing worth crawling here, tho.
+# can still access everything
+# nothing worth crawling here
+# not for the bots, not for the humans
 
 User-agent: *
 Allow: /loop/
