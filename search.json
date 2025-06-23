@@ -1,23 +1,9 @@
 [
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "M. Murat Ardag, Ph.D.",
-    "section": "",
-    "text": "liam\n\nten.gadratarumm\n  \n    \n\nGDPR & LEGAL DISCLAIMER\nThe new General Data Protection Regulation (GDPR), May 25 2018, requires a data transparency statement. This site is made with Quarto and hosted on GitHub. Read this to have an idea about what GitHub’s ToS are. I use no plugins or back-end software to collect visitor data."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "M. Murat Ardag, Ph.D.",
     "section": "",
-    "text": "I am a data scientist and a political psychologist1 with a background in psychometrics, psycholinguistics, cross-cultural research, and modeling subjectivity.\nI specialize in a diverse array of methods and techniques as a data practitioner. My expertise encompasses machine learning, deep learning, language models, and time series analysis. Additionally, I am proficient in statistical inference, particularly in the general structural equation modeling framework2. My statistical toolkit extends to psychometric networks3, various network modeling applications, and survival analysis4.\nMy domain expertise is particularly relevant to political consulting, targeted communication, and public administration. My track record includes work on consumer behavior, customer segmentation, institutional culture, and mental well-being.\nI am currently taking a career break to pursue education in cybersecurity for my professional development.\nI worked as a data scientist at BCW Global, Europe & Africa. I served as the Turkish Language Group Leader in the European Commission Joint Research Centre’s ValuesML - Unravelling Expressed Values in the Media for Informed Policy Making project. I am a former academic.\nSome of my projects are available on ; browsing my portfolio website is another option.\nGo check these models out.\nTo find out more about me as the political psychologist, visit my academic website.\nI occasionally make blogposts; read them here.\nFeel free to connect on ."
-  },
-  {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "M. Murat Ardag, Ph.D.",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIn case, you are wondering what political psychology is this, this & this can help form an accurate impression. Read two related blog post here and here.↩︎\nThis has been the workhorse of psychometrics for decades, with extended applications in causal inference. It is a flexible modeling approach for the statistical inference of not-directly-measurable concepts.↩︎\nThis has emerged as an alternative or supplementary method to structural equation modeling.↩︎\nIf you have a marketing background, read this as customer lifetime value or churn; sociologists call this time-to-event analysis or event history analysis. Whatever you call it, this is used to evaluate whether and when an event occurs.↩︎"
+    "text": "This is the landing page of my websites. Use the navigation bar to navigate and find out more about me."
   }
 ]
