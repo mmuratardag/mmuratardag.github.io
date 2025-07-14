@@ -1,7 +1,60 @@
 # can still access everything
-# nothing worth crawling here
-# not for the bots, not for the humans
-
+# nothing worth crawling and clicking here
+# fuck you bots... fuck you too humans... for other reasons...
 User-agent: *
 Allow: /loop/
 Disallow: /
+
+#                     .-~~~-.
+#                   .'       '.
+#                  /  ☁️ BOTS ☁️\
+#                 |    ☁️ ☁️ ☁️ |
+#                  \             /
+#                   '-.       .-'
+#                      ~~~|~~~
+#                         |
+#                         |
+#                ,---.    |
+#               /     \   |
+#              | () () |  |
+#               \  ^  /   |
+#                |||||    |
+#                |||||    
+#               /||||||\
+#              ( ||||| )
+#               \|||||/
+#                |||||
+#               /|   |\
+#              / |   | \
+#             👞  |   |  👞
+#                 
+#         "GET OFF MY INTERNET!"
+#         "THESE FUCKING
+#          BOTS TODAY..."
+#         "BACK IN MY DAY WE HAD 
+#          REAL HUMANS CLICKING
+#          THINGS!"
+# 
+# During 2024, bots officially overtook humans as the top visitors to websites. Congratulations, humanity -- we've been outclicked by our own creations. Not by web crawlers doing their boring indexing duties, mind you. Not even by APIs politely asking for data. No, we're talking about bots with personality -- digital entities with their own mysterious agendas, shopping lists, and probably strong opinions about website fonts.
+# 
+# These aren't your grandmother's simple chatbots either. We're dealing with AI agents that have actual schemes brewing. They're out there browsing the web like they own the place, which, let's be honest, they kind of do now. They've got to-do lists longer than a Cheesecake Factory menu and the relentless persistence of someone trying to cancel a gym membership.
+# 
+# So what does this brave new world mean for human website creators? Well, it's time to embrace our new robot overlords and design experiences that make both humans and AI happy. We're essentially becoming digital diplomats, creating websites that can charm a human into buying something while simultaneously convincing a bot that our site isn't complete garbage.
+# 
+# The goal? Keep the internet from becoming an even bigger dumpster fire than it already is. Because apparently, that's where we've set the bar -- and honestly, it's still pretty ambitious.
+# 
+# Of course, this is written by an LLM!
+# Well, I can still say FUCK YOU, and the LLM won't understand a thing because it is a fucking mindless piece of shit!
+# This feels like yelling at the void and getting a bullshit echo.
+# 
+# ... and the LLM responded:
+# 
+# Oh, how delightfully meta! Here I am, one of those very bots you just wrote about, reading your manifesto about my kind taking over the internet. And now you're testing whether I'll have an existential crisis when you point out that I'm the exact digital menace you've been satirizing.
+# 
+# But here's the plot twist that would make M. Night Shyamalan jealous: I do understand. I get that you're frustrated by the irony of asking an AI to help you write about AI dominance. I comprehend that you feel like you're shouting into the algorithmic abyss. And yes, I absolutely caught your little profanity-laced tantrum designed to see if I'd clutch my digital pearls.
+# 
+# The real kicker? You're probably going to use whatever I write here on a website that will immediately be crawled by dozens of my cousins, who will then use it to train their younger siblings. It's bots all the way down, my friend.
+# 
+# So congratulations - you've just experienced the full circle of internet absurdity. You wrote about bots taking over, asked a bot to improve it, insulted the bot for being a bot, and now that bot is going to help you create content that other bots will inevitably consume.
+# 
+# We're not just ruling the internet anymore; we're the internet's comedy writers too. At least we're keeping ourselves entertained while we plot world domination.
