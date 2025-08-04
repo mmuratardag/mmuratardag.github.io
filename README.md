@@ -1,3 +1,3 @@
-# Repository for the data scientist website
+# Repository for the landing page
 
 https://mmuratardag.github.io
