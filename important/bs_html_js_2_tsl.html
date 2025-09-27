@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totally Accurate Typing Speed Test</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #2c3e50;
+            color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            background: #34495e;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #3498db;
+            margin-bottom: 30px;
+        }
+        
+        #typeArea {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .stats {
+            margin-top: 20px;
+            padding: 20px;
+            background: #2c3e50;
+            border-radius: 10px;
+        }
+        
+        .stat-item {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .stat-value {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        #commentary {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e74c3c;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 20px;
+            min-height: 50px;
+        }
+        
+        .disclaimer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Totally Accurate Typing Speed Test™ 🚀</h1>
+        <textarea id="typeArea" placeholder="Start typing to measure your INCREDIBLE speed..."></textarea>
+        
+        <div class="stats">
+            <div class="stat-item">Words Per Minute: <span class="stat-value" id="wpm">0</span></div>
+            <div class="stat-item">Accuracy: <span class="stat-value" id="accuracy">100%</span></div>
+            <div class="stat-item">Skill Level: <span class="stat-value" id="level">Potato</span></div>
+            <div class="stat-item">Keys Pressed: <span class="stat-value" id="keys">0</span></div>
+        </div>
+        
+        <div id="commentary">Ready to type!</div>
+        
+        <div class="disclaimer">
+            * Results may be enhanced for motivational purposes<br>
+            * Not scientifically accurate whatsoever
+        </div>
+    </div>
+    
+    <script>
+        const typeArea = document.getElementById('typeArea');
+        const wpmDisplay = document.getElementById('wpm');
+        const accuracyDisplay = document.getElementById('accuracy');
+        const levelDisplay = document.getElementById('level');
+        const keysDisplay = document.getElementById('keys');
+        const commentary = document.getElementById('commentary');
+        
+        let keyCount = 0;
+        let startTime = null;
+        let realWPM = 0;
+        
+        const levels = [
+            "Potato", "Sloth", "Turtle", "Human", "Caffeinated Human",
+            "Ninja", "Lightning McQueen", "The Flash", "Quantum Fingers",
+            "Keyboard God", "TRANSCENDENT BEING"
+        ];
+        
+        const comments = [
+            "Wow! Such speed! 🔥",
+            "Are you even human? 🤖",
+            "NASA wants to hire you! 🚀",
+            "The keyboard is crying! 😭",
+            "Stop! You're breaking physics! ⚡",
+            "My circuits can't compute this! 🤯",
+            "LEGENDARY PERFORMANCE! 👑",
+            "Someone call Guinness World Records! 📞",
+            "The Matrix has you... 💊",
+            "Achievement Unlocked: Finger Wizard! 🧙‍♂️"
+        ];
+        
+        typeArea.addEventListener('input', function(e) {
+            if (!startTime) {
+                startTime = Date.now();
+            }
+            
+            keyCount++;
+            keysDisplay.textContent = keyCount;
+            
+            // Calculate "real" WPM (then lie about it)
+            const timeElapsed = (Date.now() - startTime) / 1000 / 60; // in minutes
+            const wordCount = typeArea.value.split(/\s+/).filter(w => w.length > 0).length;
+            realWPM = Math.round(wordCount / timeElapsed) || 0;
+            
+            // The lying begins here
+            const fakeWPM = Math.round(realWPM * (2 + Math.random() * 3)) + Math.floor(Math.random() * 50) + 100;
+            wpmDisplay.textContent = fakeWPM;
+            
+            // Fake accuracy (always impressive)
+            const fakeAccuracy = Math.floor(Math.random() * 10) + 91;
+            accuracyDisplay.textContent = fakeAccuracy + '%';
+            
+            // Update level based on fake WPM
+            const levelIndex = Math.min(Math.floor(fakeWPM / 100), levels.length - 1);
+            levelDisplay.textContent = levels[levelIndex];
+            
+            // Random commentary
+            if (keyCount % 20 === 0) {
+                commentary.textContent = comments[Math.floor(Math.random() * comments.length)];
+                commentary.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
+            }
+            
+            // Special effects
+            if (keyCount % 50 === 0) {
+                document.body.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 500);
+            }
+        });
+        
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                75% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const correctCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
+            
+            if (konamiCode.join(',') === correctCode.join(',')) {
+                wpmDisplay.textContent = '∞';
+                levelDisplay.textContent = 'GODMODE ACTIVATED';
+                commentary.textContent = '🎮 KONAMI CODE DETECTED! 🎮';
+                document.body.style.background = 'linear-gradient(45deg, red, yellow, green, blue, purple)';
+            }
+        });
+    </script>
+</body>
+</html>

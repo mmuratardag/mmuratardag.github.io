@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Button of Infinite Wisdom</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        #magicButton {
+            font-size: 24px;
+            padding: 20px 40px;
+            background: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        #magicButton:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        #wisdom {
+            margin-top: 30px;
+            font-size: 28px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            max-width: 80%;
+            text-align: center;
+        }
+        
+        #counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .floating-emoji {
+            position: absolute;
+            font-size: 40px;
+            animation: float 3s ease-out forwards;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            to {
+                transform: translateY(-200px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">Clicks: <span id="clickCount">0</span></div>
+    <button id="magicButton">Click me for wisdom!</button>
+    <div id="wisdom"></div>
+    
+    <script>
+        let clickCount = 0;
+        const button = document.getElementById('magicButton');
+        const wisdomDiv = document.getElementById('wisdom');
+        const clickCounter = document.getElementById('clickCount');
+        
+        const wisdoms = [
+            "404: Wisdom not found... Just kidding! You're awesome! 🎉",
+            "The bug is not in your code, it's in your understanding of your code 🐛",
+            "console.log() is a valid debugging strategy 💻",
+            "It works on my machine! ¯\\_(ツ)_/¯",
+            "Have you tried turning it off and on again? 🔌",
+            "The answer is always 42... or undefined 🤔",
+            "Semicolons are optional; chaos is mandatory 😈",
+            "Your code is perfect. It's the computer that's wrong! 🤖",
+            "Stack Overflow is your real senior developer 📚",
+            "Coffee is just developer fuel ☕",
+            "It's not a bug, it's an undocumented feature! ✨",
+            "Code works? Don't touch it. Code broken? Don't touch it. 🙈"
+        ];
+        
+        const emojis = ['🌟', '💫', '✨', '🎈', '🎉', '🦄', '🌈', '💖', '🚀', '🍕'];
+        
+        button.addEventListener('click', function(e) {
+            clickCount++;
+            clickCounter.textContent = clickCount;
+            
+            // Random wisdom
+            const randomWisdom = wisdoms[Math.floor(Math.random() * wisdoms.length)];
+            wisdomDiv.textContent = randomWisdom;
+            
+            // Crazy button behavior
+            if (clickCount % 5 === 0) {
+                button.style.transform = `translateX(${Math.random() * 200 - 100}px) translateY(${Math.random() * 100 - 50}px)`;
+                setTimeout(() => {
+                    button.style.transform = '';
+                }, 500);
+            }
+            
+            // Spawn floating emoji
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = e.clientX + 'px';
+            emoji.style.top = e.clientY + 'px';
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => emoji.remove(), 3000);
+            
+            // Special effects at certain click counts
+            if (clickCount === 10) {
+                alert("Achievement Unlocked: Button Enthusiast! 🏆");
+            } else if (clickCount === 50) {
+                document.body.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    document.body.style.transform = '';
+                    alert("Whoops! Fixed the universe! 🌍");
+                }, 2000);
+            } else if (clickCount === 100) {
+                button.textContent = "You win! But also... why? 🤷";
+            }
+        });
+        
+        // Random button text changes
+        setInterval(() => {
+            if (Math.random() > 0.9) {
+                const texts = ["Click me!", "Poke me!", "Boop!", "Press for magic!", "Do it!", "Why not?"];
+                button.textContent = texts[Math.floor(Math.random() * texts.length)];
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
