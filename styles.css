@@ -1,0 +1,9 @@
+:root {
+  --subheading-color: #e97f07;
+}
+
+main h3 {
+  color: var(--subheading-color);
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
