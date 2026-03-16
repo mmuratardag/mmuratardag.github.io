@@ -1,14 +1,28 @@
 [
   {
+    "objectID": "services.html",
+    "href": "services.html",
+    "title": "M. Murat Ardag, Ph.D.",
+    "section": "",
+    "text": "Services\nPlaceholder text"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "M. Murat Ardag, Ph.D.",
     "section": "",
-    "text": "Welcome to the landing page of my various websites.\n\n\nI am a former academic turned data scientist, now freelancing at the intersection of AI and cybersecurity."
+    "text": "Welcome to the landing page of my various websites.\n\nAbout Me\nI am a former academic turned data scientist, now freelancing at the intersection of AI and cybersecurity.\n\n\n\n\n\nExplore My Work\nSome of my projects are available on GitHub  and HuggingFace  Browsing my portfolio website is another option.\n\n\n\n\n\nMore About Me\nRead about my professional journey.\nTo find out more about me as the political psychologist, visit my academic website.\nI occasionally make blogposts.\nFeel free to connect on LinkedIn  ."
   },
   {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
+    "objectID": "professional_journey.html",
+    "href": "professional_journey.html",
+    "title": "M. Murat Ardag, Ph.D.",
+    "section": "",
+    "text": "At BCW Global, Europe & Africa1 I worked with teams across the EU and UK to develop three products. I also provided comprehensive data analysis and strategic insights to client teams throughout the EMEA region.\nWhile working in the private sector, I volunteered as the Turkish Language Group Leader in the European Commission Joint Research Centre’s ValuesML - Unravelling Expressed Values in the Media for Informed Policy Making project.\nMy academic background is in political psychology2, with expertise in psychometrics, psycholinguistics, cross-cultural research, and modeling human subjectivity.\nMy academic role, prior to transitioning to the private sector, had placed me at the intersection of research and industry. I led the data analysis for a major externally-funded project, fostering a collaboration between a multinational consulting firm and teams from several universities.\nIn another life, before becoming an academic, I worked as a sales manager at a multinational outdoor advertising company in Istanbul. During my undergrad studies, I worked as a music journalist."
+  },
+  {
+    "objectID": "professional_journey.html#footnotes",
+    "href": "professional_journey.html#footnotes",
     "title": "M. Murat Ardag, Ph.D.",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis became Burson after the holding company WPP has officially merged its two largest communications agencies, BCW and Hill & Knowlton.↩︎\nIn case, you are wondering what political psychology is this, this & this can help form an accurate impression. Read two related blog post here and here.↩︎"

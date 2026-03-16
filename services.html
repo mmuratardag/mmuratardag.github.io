@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>M. Murat Ardag, Ph.D.</title>
+<title>services – M. Murat Ardag, Ph.D.</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,8 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-d8959edb5c358ddb2e3be135ec60f9fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -95,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Landing Page</span></a>
   </li>  
   <li class="nav-item">
@@ -140,8 +138,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#explore-my-work" id="toc-explore-my-work" class="nav-link active" data-scroll-target="#explore-my-work">Explore My Work</a></li>
-  <li><a href="#more-about-me" id="toc-more-about-me" class="nav-link" data-scroll-target="#more-about-me">More About Me</a></li>
+  <li><a href="#services" id="toc-services" class="nav-link active" data-scroll-target="#services">Services</a></li>
   </ul>
 </nav>
     </div>
@@ -151,80 +148,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-layout-panel" data-layout="[ 25, 75 ]">
-<div class="quarto-layout-row">
-<div id="first-column" class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img src="ws_img/mma_c_gp.jpg" class="img-fluid"></p>
-</div>
-<div id="second-column" class="quarto-layout-cell" style="flex-basis: 75.0%;justify-content: flex-start;">
-<p>Welcome to the landing page of my various websites.</p>
-<section id="about-me" class="level3">
-<h3 class="anchored" data-anchor-id="about-me">About Me</h3>
-<p>I am a former academic turned <a href="https://mmuratardag.github.io/data_science_website">data scientist</a>, now freelancing at the intersection of AI and <a href="https://mmuratardag.github.io/cybersecurity_website">cybersecurity</a>.</p>
-</section>
-</div>
-</div>
-</div>
-<section id="explore-my-work" class="level3">
-<h3 class="anchored" data-anchor-id="explore-my-work">Explore My Work</h3>
-<p>Some of my projects are available on GitHub <a href="https://github.com/mmuratardag" target="_blank"><i class="fa-brands fa-github" aria-label="github"></i></a> and HuggingFace <a href="https://huggingface.co/MMADS" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" style="width: 1.2em; vertical-align: middle; margin: 0 0.2em;"></a> Browsing my <a href="https://mmuratardag.github.io/portfolio_website/portfolio.html">portfolio website</a> is another option.</p>
-<div id="total-downloads">
-<script>
-async function displayTotalDownloads() {
-  const models = [
-    "MMADS/MoralFoundationsClassifier",
-    "MMADS/RoBERTa-OrgCulture-Classifier"
-  ];
-
-  try {
-    // 1. Fetch data for all models
-    const responses = await Promise.all(
-      models.map(id => 
-        fetch(`https://huggingface.co/api/models/${id}?expand=downloadsAllTime&t=${Date.now()}`)
-          .then(res => {
-            if (!res.ok) throw new Error(`Model ${id} not found or private.`);
-            return res.json();
-          })
-      )
-    );
-
-    // 2. Sum up the downloads
-    const total = responses.reduce((acc, data) => {
-      const count = data.downloadsAllTime || data.downloads || 0;
-      return acc + count;
-    }, 0);
-    
-    // 3. Update the UI
-    const container = document.getElementById('total-downloads');
-    if (container) {
-      const now = new Date();
-      const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-      container.innerHTML = `
-        As of ${dateStr}, ${timeStr}, my fine-tuned models on
-        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
-             alt="Hugging Face" 
-             style="width: 1.2em; vertical-align: middle; margin: 0 0.2em;">
-        have been downloaded <strong>${total.toLocaleString()}</strong> times.
-      `;
-    }
-  } catch (err) {
-    console.error("HF Stats Error:", err);
-    document.getElementById('total-downloads').textContent = "Stats currently unavailable.";
-  }
-}
-
-displayTotalDownloads();
-</script>
-</div>
-</section>
-<section id="more-about-me" class="level3">
-<h3 class="anchored" data-anchor-id="more-about-me">More About Me</h3>
-<p>Read about my <a href="./professional_journey.html">professional journey</a>.</p>
-<p>To find out more about me as the political psychologist, visit my <a href="https://mmuratardag.github.io/academic_website">academic website</a>.</p>
-<p>I occasionally make <a href="https://mmuratardag.github.io/blog_posts">blogposts</a>.</p>
-<p>Feel free to connect on LinkedIn <a href="https://www.linkedin.com/in/mmuratardag" target="_blank"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> .</p>
-<!-- View my services. -->
+<section id="services" class="level3">
+<h3 class="anchored" data-anchor-id="services">Services</h3>
+<p>Placeholder text</p>
 
 
 </section>
