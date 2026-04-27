@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "services.html",
-    "href": "services.html",
-    "title": "M. Murat Ardag, Ph.D.",
-    "section": "",
-    "text": "Services\nPlaceholder text"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "M. Murat Ardag, Ph.D.",
     "section": "",
-    "text": "Welcome to the landing page of my various websites.\n\nAbout Me\nI am a former academic turned data scientist, now freelancing at the intersection of AI and cybersecurity.\n\n\n\n\n\nExplore My Work\nSome of my projects are available on GitHub  and HuggingFace  Browsing my portfolio website is another option.\n\n\n\n\n\nMore About Me\nRead about my professional journey.\nTo find out more about me as the political psychologist, visit my academic website.\nI occasionally make blogposts.\nFeel free to connect on LinkedIn  ."
+    "text": "Welcome to the landing page of my various websites.\n\nAbout Me\nI am a former academic turned data scientist, now freelancing at the intersection of AI and cybersecurity.\n\n\n\n\n\nView My Services\n\n  \n    \n    For Businesses\n    Workshops, cybersecurity, AI red teaming, and executive advisory for startups, SMEs, and tech teams.\n    Explore \n  \n  \n    \n    For Non-Profits\n    Workshops and data products for NGOs, think tanks, and policy institutes.\n    Explore \n  \n\n\n\nExplore My Work\nSome of my projects are available on GitHub  and HuggingFace  Browsing my portfolio projects is another option.\n\n\n\n\n\nMore About Me\nRead about my professional journey.\nTo find out more about me as the political psychologist, visit my academic website.\nI occasionally make blogposts.\nFeel free to connect on LinkedIn  ."
+  },
+  {
+    "objectID": "services_for_profit.html",
+    "href": "services_for_profit.html",
+    "title": "Services for Businesses",
+    "section": "",
+    "text": "Services for Businesses\n\n\n\n\n  \n    \n    Awareness & Enablement Workshops\n    For Startups & Tech Teams\n    \n      Security-first culture for fast-moving teams: phishing resilience, credential hygiene, and safe use of SaaS and AI assistants, tailored to engineering workflows.\n      Cybersecurity for GenAI systems: addressing common vulnerabilities and third-party model risk in production LLM systems.\n    \n    For SMEs\n    \n      AI & cybersecurity fundamentals for non-technical staff: a plain-language briefing on the technologies, threat landscape, the regulatory obligations that apply, and the practical steps an organization can take without in-house teams.\n    \n  \n\n  \n    \n    Executive Advisory (1:1)\n    For Startup & SME Leadership: CEOs, CTOs, CISOs, CDOs, Heads of Data\n    \n      Governance, Risk & Compliance: aligning AI adoption with EU AI Act obligations, risk frameworks, and board-level reporting.\n      Threat intelligence & OSINT for decision-makers: translating the current threat landscape into specific exposure for specific sectors and supply chains.\n    \n  \n\n  \n    \n    Offensive Security & AI Red Teaming\n    For SMEs\n    \n      AI red teaming: conduct rigorous adversarial testing of LLM-based applications to proactively map and mitigate common threats.\n      Web application pentesting: vulnerability discovery and exploitation across web apps, APIs, and supporting infrastructure, with remediation guidance that developers can use.\n    \n  \n\n  \n    \n    Custom Engagements\n    Get in touch to discuss bespoke scopes\n  \n\n\n\nHow engagements work\n    \n      Scoping call: a free 30-minute conversation to clarify objectives, constraints, and the outcomes you need.\n      Written proposal: a statement of work covering scope, timeline, deliverables, and fees.\n      Delivery: execution against the agreed plan, with regular check-ins and a written handover at close.\n    \n\nAll engagements are in English, remote or on-site. Workshops run as half-day, full-day, or multi-session formats.\n\nBook a call"
   },
   {
     "objectID": "professional_journey.html",
@@ -26,5 +26,12 @@
     "title": "M. Murat Ardag, Ph.D.",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis became Burson after the holding company WPP has officially merged its two largest communications agencies, BCW and Hill & Knowlton.↩︎\nIn case, you are wondering what political psychology is this, this & this can help form an accurate impression. Read two related blog post here and here.↩︎"
+  },
+  {
+    "objectID": "services_non_profit.html",
+    "href": "services_non_profit.html",
+    "title": "Services for Non-Profits",
+    "section": "",
+    "text": "Services for Non-Profits\n\n\n\n\n  \n    \n    Awareness & Enablement Workshops\n    NGOs, Think Tanks & Policy Institutes\n    \n      AI & cybersecurity for non-technical teams: accessible grounding in the threats. Includes secure communications, source protection, account hardening, and recognition of targeted threats against journalists, researchers, and advocacy staff.\n      Disinformation & information manipulation literacy: detecting coordinated inauthentic behavior, AI-generated content, and narrative laundering, including attribution and response frameworks, grounded in the latest EU evidence base on foreign information manipulation & interference and platform-driven polarization.\n      Operational resilience: protecting staff, sources, and sensitive data against targeted and opportunistic attacks.\n    \n  \n\n  \n    \n    Custom Data Products\n    NGOs, Think Tanks & Policy Institutes\n    \n      Dashboards & automated workflows: from raw data to publication-ready outputs, built to be maintainable by non-engineers.\n      Research design & analysis: quantitative and mixed-methods grounded in an academic research background, tailored to policy-relevant questions.\n      Media/narrative analysis: aligned to organizational objectives, including OSINT-driven investigations.\n    \n  \n\n  \n    \n    Custom Engagements\n    Get in touch to discuss bespoke scopes\n  \n\n\n\nHow engagements work\n    \n      Scoping call: a free 30-minute conversation to clarify objectives, constraints, and the outcomes you need.\n      Written proposal: a statement of work covering scope, timeline, deliverables, and fees.\n      Delivery: execution against the agreed plan, with regular check-ins and a written handover at close.\n    \n\nAll engagements are in English, remote or on-site. Workshops run as half-day, full-day, or multi-session formats.\n\nBook a call"
   }
 ]

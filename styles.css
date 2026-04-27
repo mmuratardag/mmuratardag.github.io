@@ -7,3 +7,87 @@ main h3 {
   letter-spacing: 0.02em;
   text-transform: none;
 }
+
+/* === Service Cards === */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+
+@media (min-width: 700px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.025);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+              box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--subheading-color);
+  background: rgba(233, 127, 7, 0.04);
+  box-shadow: 0 6px 20px -8px rgba(233, 127, 7, 0.45);
+  text-decoration: none;
+}
+
+.service-card:focus-visible {
+  outline: 2px solid var(--subheading-color);
+  outline-offset: 3px;
+}
+
+.service-card-icon {
+  font-size: 1.6rem;
+  color: var(--subheading-color);
+  margin-bottom: 0.6rem;
+}
+
+.service-card-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: inherit;
+}
+
+.service-card-tagline {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.service-card-cue {
+  margin-top: auto;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--subheading-color);
+  opacity: 0.75;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.service-card-cue i { transition: transform 0.18s ease; margin-left: 0.25rem; }
+.service-card:hover .service-card-cue,
+.service-card:focus-visible .service-card-cue { opacity: 1; }
+.service-card:hover .service-card-cue i,
+.service-card:focus-visible .service-card-cue i { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card-cue,
+  .service-card-cue i { transition: none; }
+  .service-card:hover { transform: none; }
+}
+
